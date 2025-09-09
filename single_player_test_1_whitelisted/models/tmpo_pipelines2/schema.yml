@@ -1,0 +1,15 @@
+---
+version: 2
+models:
+- name: "tmpo_pipelines2__person_details_joined"
+  tags:
+  - "prophecy_temp"
+- name: "tmpo_pipelines2__generate_unique_id_with_timestamp"
+  tags:
+  - "prophecy_temp"
+- name: "tmpo_pipelines2__Reformat_2"
+  tags:
+  - "prophecy_temp"
+- name: "tmpo_pipelines2__Reformat_3"
+  tags:
+  - "prophecy_temp"

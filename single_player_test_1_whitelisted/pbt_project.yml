@@ -1,0 +1,408 @@
+name: single_player_test_1
+description: ''
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-09-08 09:35:13'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-09-08 09:35:20'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2025-09-08 09:35:58'
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/seedraw:
+    name: seedraw
+    schema:
+      entityType: ''
+      providerType: ProphecyManaged
+      fields:
+      - name: id
+        dataType:
+          type: Integer
+      - name: first_name
+        dataType:
+          type: String
+      - name: lastname
+        dataType:
+          type: String
+      - name: address
+        dataType:
+          type: String
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/seedraw.csv
+    createdAt: '2025-09-08 09:37:43'
+sqlSources:
+  .prophecy/metadata/sqlsources/qa_prakhar_database_main:
+    name: qa_prakhar_database.main
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-08 10:26:58'
+    tables:
+    - name: checkJoinVal
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: id
+          dataType:
+            type: Integer
+        - name: first_name
+          dataType:
+            type: String
+        - name: lastname
+          dataType:
+            type: String
+        - name: address
+          dataType:
+            type: String
+      description: ''
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-08 10:26:58'
+      tableType: table
+    - name: tables_to_tables
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: BigInt
+        - name: c_smallint
+          dataType:
+            type: BigInt
+        - name: c_int
+          dataType:
+            type: BigInt
+        - name: c_float
+          dataType:
+            type: Double
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_decimal
+          dataType:
+            type: Double
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_null
+          dataType:
+            type: String
+        - name: c_emptystring
+          dataType:
+            type: String
+        - name: c_date
+          dataType:
+            type: Date
+        - name: c_timestamp
+          dataType:
+            type: Timestamp
+        - name: c_interval
+          dataType:
+            type: String
+        - name: c_time
+          dataType:
+            type: String
+        - name: c_array
+          dataType:
+            type: String
+        - name: c_struct
+          dataType:
+            type: String
+        - name: c_array_of_struct
+          dataType:
+            type: String
+        - name: c_struct_of_array
+          dataType:
+            type: String
+        - name: c_complex_struct
+          dataType:
+            type: String
+        - name: FileName
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-08 13:03:24'
+      tableType: table
+    - name: s3_to_table
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: BigInt
+        - name: c_smallint
+          dataType:
+            type: BigInt
+        - name: c_int
+          dataType:
+            type: BigInt
+        - name: c_float
+          dataType:
+            type: Double
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_decimal
+          dataType:
+            type: Double
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_null
+          dataType:
+            type: String
+        - name: c_emptystring
+          dataType:
+            type: String
+        - name: c_date
+          dataType:
+            type: Date
+        - name: c_timestamp
+          dataType:
+            type: Timestamp
+        - name: c_interval
+          dataType:
+            type: String
+        - name: c_time
+          dataType:
+            type: String
+        - name: c_array
+          dataType:
+            type: String
+        - name: c_struct
+          dataType:
+            type: String
+        - name: c_array_of_struct
+          dataType:
+            type: String
+        - name: c_struct_of_array
+          dataType:
+            type: String
+        - name: c_complex_struct
+          dataType:
+            type: String
+        - name: FileName
+          dataType:
+            type: String
+      description: ''
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-08 13:05:25'
+      tableType: table
+  .prophecy/metadata/sqlsources/qa_prakhar_database_qa_schema:
+    name: qa_prakhar_database.qa_schema
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-08 13:00:17'
+    tables:
+    - name: sftp_to_table
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: id
+          dataType:
+            type: BigInt
+        - name: name
+          dataType:
+            type: String
+        - name: updated_at
+          dataType:
+            type: Date
+        - name: FileName
+          dataType:
+            type: String
+      description: ''
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-08 13:00:17'
+      tableType: table
+    - name: smatsheet_to_tables
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Primary_Column
+          dataType:
+            type: String
+        - name: Assigned_To
+          dataType:
+            type: String
+        - name: Status
+          dataType:
+            type: String
+        - name: Start_Date
+          dataType:
+            type: String
+        - name: End_Date
+          dataType:
+            type: String
+        - name: Duration
+          dataType:
+            type: String
+        - name: At_Risk
+          dataType:
+            type: String
+        - name: Modified_By
+          dataType:
+            type: String
+        - name: Modification_Date
+          dataType:
+            type: String
+        - name: Column10
+          dataType:
+            type: String
+        - name: Column11
+          dataType:
+            type: String
+        - name: Column12
+          dataType:
+            type: String
+        - name: Column13
+          dataType:
+            type: String
+        - name: Column14
+          dataType:
+            type: String
+        - name: Column15
+          dataType:
+            type: String
+        - name: Column16
+          dataType:
+            type: String
+        - name: Column17
+          dataType:
+            type: String
+        - name: Column18
+          dataType:
+            type: String
+        - name: Column19
+          dataType:
+            type: String
+        - name: Column20
+          dataType:
+            type: String
+        - name: Column21
+          dataType:
+            type: String
+        - name: Column22
+          dataType:
+            type: String
+        - name: Column23
+          dataType:
+            type: String
+        - name: Total_Date
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-08 13:28:47'
+      tableType: table
+    - name: sharepoint_to_tables
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-08 13:41:58'
+      tableType: table
+    - name: sharepoint1_to_tables
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-08 13:57:08'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: abhisheks+e2etests@prophecy.io
+  createdAt: '2025-09-08 09:35:13'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/tmpo_pipelines2:
+    name: tmpo_pipelines2
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/tmpo_pipelines2/tmpo_pipelines2__Reformat_2.sql
+    - models/tmpo_pipelines2/tmpo_pipelines2__Reformat_3.sql
+    - models/tmpo_pipelines2/tmpo_pipelines2__person_details_joined.sql
+    - models/tmpo_pipelines2/tmpo_pipelines2__generate_unique_id_with_timestamp.sql
+    - models/tmpo_pipelines2/schema.yml
+    - .prophecy/ide/pipelines/tmpo_pipelines2.json
+    - pipelines/tmpo_pipelines2.py
+    createdAt: '2025-09-08 09:59:24'
+  .prophecy/metadata/sqlorchestratorpipeline/tmp_pipelines:
+    name: tmp_pipelines
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/tmp_pipelines/tmp_pipelines__Filter_1.sql
+    - models/tmp_pipelines/tmp_pipelines__smarsheet2.sql
+    - models/tmp_pipelines/tmp_pipelines__checkxa3_data.sql
+    - models/tmp_pipelines/tmp_pipelines__Reformat_4.sql
+    - models/tmp_pipelines/tmp_pipelines__all_concatenated_dates.sql
+    - models/tmp_pipelines/tmp_pipelines__Limit_1.sql
+    - models/tmp_pipelines/tmp_pipelines__person_details_joined.sql
+    - models/tmp_pipelines/schema.yml
+    - models/tmp_pipelines/tmp_pipelines__Reformat_3.sql
+    - models/tmp_pipelines/tmp_pipelines__Reformat_2.sql
+    - .prophecy/ide/pipelines/tmp_pipelines.json
+    - pipelines/tmp_pipelines.py
+    createdAt: '2025-09-08 09:35:58'
+sqlBusinessApps: {}

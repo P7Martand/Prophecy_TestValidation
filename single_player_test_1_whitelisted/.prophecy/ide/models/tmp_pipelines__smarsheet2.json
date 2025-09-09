@@ -1,0 +1,93 @@
+{
+  "id" : "tmp_pipelines__smarsheet2",
+  "metainfo" : {
+    "label" : "tmp_pipelines__smarsheet2",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"sharepoint1_to_tables\"",
+        "materialized" : "table",
+        "database" : "\"qa_prakhar_database\"",
+        "schema" : "\"qa_schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Aq6XdoX2bSDkmMpT_Ep7-$$c8rwWqiKyMp9JPu94UR26" : {
+      "id" : "Aq6XdoX2bSDkmMpT_Ep7-$$c8rwWqiKyMp9JPu94UR26",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "sharepoint_to_tables",
+        "x" : -420,
+        "y" : -1120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sharepoint_to_tables",
+          "sourceType" : "Source",
+          "sourceName" : "qa_prakhar_database.qa_schema",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite",
+          "entityConfig" : { }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "_Ek1qnbh91gyKZThUVFYI$$klnPkGXWquI1432NBjMfQ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ZHp6mrgxkP5kR8X8GjyqD$$_uVQKEI9_PBpRchcd9rjU" : {
+      "id" : "ZHp6mrgxkP5kR8X8GjyqD$$_uVQKEI9_PBpRchcd9rjU",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "smarsheet2",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM sharepoint_to_tables\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mRmpnOHWAhrs65neiVaX_$$ar1XLgTKkA5vXvSz-4vtr",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "lWHuq2PTApMpN51nHtugE$$fsslq923yCEfljc-9su2o",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "77gZGN8j8hvK4TkQyYFJM",
+    "source" : "Aq6XdoX2bSDkmMpT_Ep7-$$c8rwWqiKyMp9JPu94UR26",
+    "sourcePort" : "_Ek1qnbh91gyKZThUVFYI$$klnPkGXWquI1432NBjMfQ",
+    "target" : "ZHp6mrgxkP5kR8X8GjyqD$$_uVQKEI9_PBpRchcd9rjU",
+    "targetPort" : "mRmpnOHWAhrs65neiVaX_$$ar1XLgTKkA5vXvSz-4vtr"
+  } ],
+  "component" : "Model"
+}

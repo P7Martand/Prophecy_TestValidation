@@ -1,0 +1,124 @@
+{
+  "id" : "tmpo_pipelines2__generate_unique_id_with_timestamp",
+  "metainfo" : {
+    "label" : "tmpo_pipelines2__generate_unique_id_with_timestamp",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"database\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "generate_unique_id_with_timestamp_hGCHpY_o4HaYab3OC2l9n$$_s3K6EDb1zx_M9O3r0jd7" : {
+      "id" : "generate_unique_id_with_timestamp_hGCHpY_o4HaYab3OC2l9n$$_s3K6EDb1zx_M9O3r0jd7",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "generate_unique_id_with_timestamp"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM generate_unique_id_with_timestamp\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY" : {
+      "id" : "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "generate_unique_id_with_timestamp",
+        "x" : 540,
+        "y" : -360,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "SELECT \n  uuid () AS unique_id,\n  current_localtimestamp() AS current_time;\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HPSKI5o0AZoIGPVNCf89c$$zUCov-VbH-oe8EMduwOt9",
+          "slug" : "Table_0"
+        } ],
+        "outputs" : [ {
+          "id" : "hGCHpY_o4HaYab3OC2l9n$$_s3K6EDb1zx_M9O3r0jd7",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q" : {
+      "id" : "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Table_0",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "seedraw",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "wwXYybMa5hhJLowY_kNDF$$Lwwnp4vMsprtHJzdaKlhm",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY_generate_unique_id_with_timestamp_hGCHpY_o4HaYab3OC2l9n$$_s3K6EDb1zx_M9O3r0jd7",
+    "source" : "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY",
+    "sourcePort" : "hGCHpY_o4HaYab3OC2l9n$$_s3K6EDb1zx_M9O3r0jd7",
+    "target" : "generate_unique_id_with_timestamp_hGCHpY_o4HaYab3OC2l9n$$_s3K6EDb1zx_M9O3r0jd7",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "bvArHiw_w7IF8b2K74Jsb",
+    "source" : "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q",
+    "sourcePort" : "wwXYybMa5hhJLowY_kNDF$$Lwwnp4vMsprtHJzdaKlhm",
+    "target" : "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY",
+    "targetPort" : "HPSKI5o0AZoIGPVNCf89c$$zUCov-VbH-oe8EMduwOt9"
+  } ],
+  "component" : "Model"
+}

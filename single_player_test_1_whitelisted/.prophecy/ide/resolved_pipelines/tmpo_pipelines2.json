@@ -1,0 +1,913 @@
+{
+  "id" : "tmpo_pipelines2",
+  "metainfo" : {
+    "label" : "tmpo_pipelines2",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "complex2_csv_1_1ab5b88f-be41-4093-91c5-b7912884c723" : {
+      "id" : "complex2_csv_1_1ab5b88f-be41-4093-91c5-b7912884c723",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "complex2_csv_1"
+      },
+      "properties" : {
+        "label" : "complex2_csv_1",
+        "table" : {
+          "name" : "{{ prophecy_tmp_source('tmpo_pipelines2', 'complex2_csv_1') }}",
+          "sourceType" : "UnreferencedSource"
+        }
+      },
+      "visualMetaInfo" : {
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_3",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_smallint",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_float",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_double",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_decimal",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_boolean",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_null",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_emptystring",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "c_timestamp",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_interval",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_time",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_array_of_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct_of_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_complex_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "input_port_3"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_3",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_smallint",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_float",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_double",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_decimal",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_boolean",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_null",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_emptystring",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "c_timestamp",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_interval",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_time",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_array_of_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct_of_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_complex_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "output_port_3"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "j9_dyEh5G8QAfXyb5zB4l$$SyKzGZOQB2q95oEZzdoVA" : {
+      "id" : "j9_dyEh5G8QAfXyb5zB4l$$SyKzGZOQB2q95oEZzdoVA",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "x" : 380,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "ports" : null,
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "return out0",
+        "script" : "print('Hello There !' + in0.FileName)\nout0 = in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rmQEAODFz63TOivNJU-8A$$dWT9dtqiZx795bVR3oZOz",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "4VpxcAEk6SAGlJRITgzZQ$$Urp3Wzq939ifqapE0b155",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "KJY1jQCPwYVfTK7g6p0KO$$bF8wq8v1zg3UzoAugnbp9" : {
+      "id" : "KJY1jQCPwYVfTK7g6p0KO$$bF8wq8v1zg3UzoAugnbp9",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tmpo_pipelines2__person_details_joined",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "tmpo_pipelines2__person_details_joined"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "KJY1jQCPwYVfTK7g6p0KO$$bF8wq8v1zg3UzoAugnbp9", "RmqvPC7Ji06yrO4qyw-eA$$XYLjJDsTc1NNTwv-2Maaq", "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q", "rF5skG5BYNxFvgKjmmYD7$$MTdT138h0nFqMejKMUusk", "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tmpo_pipelines2__person_details_joined_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "tmpo_pipelines2__person_details_joined_in_1",
+          "slug" : "in_1"
+        }, {
+          "id" : "tmpo_pipelines2__person_details_joined_in_2",
+          "slug" : "in_2"
+        } ],
+        "outputs" : [ {
+          "id" : "tmpo_pipelines2__person_details_joined_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "JPVEcTZpKpohOfEzXcDv0" : {
+      "id" : "JPVEcTZpKpohOfEzXcDv0",
+      "component" : "OrchestrationSource",
+      "kind" : "S3Source",
+      "metadata" : {
+        "label" : "complex2_csv_1",
+        "x" : -840,
+        "y" : -560,
+        "phase" : 0
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "s3",
+          "properties" : {
+            "id" : "s3_1"
+          },
+          "type" : "connector"
+        },
+        "format" : {
+          "kind" : "csv",
+          "properties" : {
+            "allowLazyQuotes" : false,
+            "allowEmptyColumnNames" : true,
+            "description" : "",
+            "separator" : ",",
+            "nullValue" : "",
+            "encoding" : "UTF-8",
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "c_tinyint",
+                "dataType" : {
+                  "type" : "int64"
+                }
+              }, {
+                "name" : "c_smallint",
+                "dataType" : {
+                  "type" : "int64"
+                }
+              }, {
+                "name" : "c_int",
+                "dataType" : {
+                  "type" : "int64"
+                }
+              }, {
+                "name" : "c_float",
+                "dataType" : {
+                  "type" : "float64"
+                }
+              }, {
+                "name" : "c_double",
+                "dataType" : {
+                  "type" : "float64"
+                }
+              }, {
+                "name" : "c_decimal",
+                "dataType" : {
+                  "type" : "float64"
+                }
+              }, {
+                "name" : "c_boolean",
+                "dataType" : {
+                  "type" : "bool"
+                }
+              }, {
+                "name" : "c_null",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_emptystring",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_date",
+                "dataType" : {
+                  "type" : "date32"
+                }
+              }, {
+                "name" : "c_timestamp",
+                "dataType" : {
+                  "type" : "timestamp"
+                }
+              }, {
+                "name" : "c_interval",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_time",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_array",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_struct",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_array_of_struct",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_struct_of_array",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "c_complex_struct",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "FileName",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              } ]
+            },
+            "header" : true
+          }
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "fileLoadingType" : "filepath",
+            "includeFileNameColumn" : true
+          },
+          "filePath" : "/complex2.csv"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "1ab5b88f-be41-4093-91c5-b7912884c723",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_smallint",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "c_float",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_double",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_decimal",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_boolean",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_null",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_emptystring",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "c_timestamp",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_interval",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_time",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_array_of_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_struct_of_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_complex_struct",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out0"
+        } ]
+      }
+    },
+    "eYAXuM4Es1T-KhhXO_CtJ$$buSAM8TiipjUqXDn7LZUj" : {
+      "id" : "eYAXuM4Es1T-KhhXO_CtJ$$buSAM8TiipjUqXDn7LZUj",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tmpo_pipelines2__Reformat_3",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "tmpo_pipelines2__Reformat_3"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "Reformat_3_Na3NfJPwyzapBW7IHWg_U$$kyIi0EJgsGkAXn-Mo-wH6", "eYAXuM4Es1T-KhhXO_CtJ$$buSAM8TiipjUqXDn7LZUj", "complex2_csv_1_1ab5b88f-be41-4093-91c5-b7912884c723" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tmpo_pipelines2__Reformat_3_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "tmpo_pipelines2__Reformat_3_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "CIq11feUmhBPD7vPxIDGH$$wZ4ZhBofBlwmqgQsUKgbS" : {
+      "id" : "CIq11feUmhBPD7vPxIDGH$$wZ4ZhBofBlwmqgQsUKgbS",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tmpo_pipelines2__Reformat_2",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "tmpo_pipelines2__Reformat_2"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "Reformat_2_4mAmXwAadFnO185ZYyCbm$$M9yztlCINfPtRLwcIZ9Rc", "CIq11feUmhBPD7vPxIDGH$$wZ4ZhBofBlwmqgQsUKgbS", "anything4_csv_1_5471334d-4bae-42b8-af6b-08a0b5ce200a" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tmpo_pipelines2__Reformat_2_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "tmpo_pipelines2__Reformat_2_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY" : {
+      "id" : "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tmpo_pipelines2__generate_unique_id_with_timestamp",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "tmpo_pipelines2__generate_unique_id_with_timestamp"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "generate_unique_id_with_timestamp_hGCHpY_o4HaYab3OC2l9n$$_s3K6EDb1zx_M9O3r0jd7", "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY", "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tmpo_pipelines2__generate_unique_id_with_timestamp_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "tmpo_pipelines2__generate_unique_id_with_timestamp_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q" : {
+      "id" : "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Table_0",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "seedraw",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vktEpbmzTXnjERiwA9-eA$$b76zxEu6GqrF8vta5hmH8",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "wwXYybMa5hhJLowY_kNDF$$Lwwnp4vMsprtHJzdaKlhm",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lastname",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "anything4_csv_1_5471334d-4bae-42b8-af6b-08a0b5ce200a" : {
+      "id" : "anything4_csv_1_5471334d-4bae-42b8-af6b-08a0b5ce200a",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "anything4_csv_1"
+      },
+      "properties" : {
+        "label" : "anything4_csv_1",
+        "table" : {
+          "name" : "{{ prophecy_tmp_source('tmpo_pipelines2', 'anything4_csv_1') }}",
+          "sourceType" : "UnreferencedSource"
+        }
+      },
+      "visualMetaInfo" : {
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "m3uZEveKFAjdVXnpCd_UV" : {
+      "id" : "m3uZEveKFAjdVXnpCd_UV",
+      "component" : "OrchestrationSource",
+      "kind" : "S3Source",
+      "metadata" : {
+        "label" : "anything4_csv_1",
+        "x" : 20,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "s3",
+          "properties" : {
+            "id" : "s3_1"
+          },
+          "type" : "connector"
+        },
+        "format" : {
+          "kind" : "csv",
+          "properties" : {
+            "allowLazyQuotes" : false,
+            "allowEmptyColumnNames" : true,
+            "description" : "",
+            "separator" : ",",
+            "nullValue" : "",
+            "encoding" : "UTF-8",
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "c_int",
+                "dataType" : {
+                  "type" : "int64"
+                }
+              }, {
+                "name" : "FileName",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              } ]
+            },
+            "header" : true
+          }
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "fileLoadingType" : "filepath",
+            "includeFileNameColumn" : true
+          },
+          "filePath" : "/anything4.csv"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "5471334d-4bae-42b8-af6b-08a0b5ce200a",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "FileName",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out0"
+        } ]
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "uI_udXoNgKsXnvISAtKrD$$r_AfyJJMqSs85SWpSoNfa",
+    "source" : "m3uZEveKFAjdVXnpCd_UV",
+    "sourcePort" : "5471334d-4bae-42b8-af6b-08a0b5ce200a",
+    "target" : "j9_dyEh5G8QAfXyb5zB4l$$SyKzGZOQB2q95oEZzdoVA",
+    "targetPort" : "rmQEAODFz63TOivNJU-8A$$dWT9dtqiZx795bVR3oZOz"
+  }, {
+    "id" : "P2GV0-RbzmUM3apvMyD61",
+    "source" : "m3uZEveKFAjdVXnpCd_UV",
+    "sourcePort" : "5471334d-4bae-42b8-af6b-08a0b5ce200a",
+    "target" : "anything4_csv_1_5471334d-4bae-42b8-af6b-08a0b5ce200a",
+    "targetPort" : "input_port_1"
+  }, {
+    "id" : "9GBOLUn3bNogSSSclMAGE",
+    "source" : "JPVEcTZpKpohOfEzXcDv0",
+    "sourcePort" : "1ab5b88f-be41-4093-91c5-b7912884c723",
+    "target" : "complex2_csv_1_1ab5b88f-be41-4093-91c5-b7912884c723",
+    "targetPort" : "input_port_3"
+  }, {
+    "id" : "bvArHiw_w7IF8b2K74Jsb",
+    "source" : "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q",
+    "sourcePort" : "wwXYybMa5hhJLowY_kNDF$$Lwwnp4vMsprtHJzdaKlhm",
+    "target" : "7xHPikH3nn05CZ--kTyRv$$maVOKShgtwnGzO7vVmZaY",
+    "targetPort" : "tmpo_pipelines2__generate_unique_id_with_timestamp_in_0"
+  }, {
+    "id" : "conn_complex2_csv_1_1ab5b88f-be41-4093-91c5-b7912884c723_eYAXuM4Es1T-KhhXO_CtJ$$buSAM8TiipjUqXDn7LZUj_0MDwAJUhZjRdTjB4vwwDJ$$fxsT1HQB1K6FifPivn_h0",
+    "source" : "complex2_csv_1_1ab5b88f-be41-4093-91c5-b7912884c723",
+    "sourcePort" : "output_port_3",
+    "target" : "eYAXuM4Es1T-KhhXO_CtJ$$buSAM8TiipjUqXDn7LZUj",
+    "targetPort" : "tmpo_pipelines2__Reformat_3_in_0"
+  }, {
+    "id" : "conn_anything4_csv_1_5471334d-4bae-42b8-af6b-08a0b5ce200a_CIq11feUmhBPD7vPxIDGH$$wZ4ZhBofBlwmqgQsUKgbS_I2ioHsUAsu5TFvOmX0iaA$$zEhGEYz7rasixfklNGhfP",
+    "source" : "anything4_csv_1_5471334d-4bae-42b8-af6b-08a0b5ce200a",
+    "sourcePort" : "output_port_1",
+    "target" : "CIq11feUmhBPD7vPxIDGH$$wZ4ZhBofBlwmqgQsUKgbS",
+    "targetPort" : "tmpo_pipelines2__Reformat_2_in_0"
+  }, {
+    "id" : "ssnBzl9IWtXEnyU-v2BRe",
+    "source" : "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q",
+    "sourcePort" : "wwXYybMa5hhJLowY_kNDF$$Lwwnp4vMsprtHJzdaKlhm",
+    "target" : "KJY1jQCPwYVfTK7g6p0KO$$bF8wq8v1zg3UzoAugnbp9",
+    "targetPort" : "tmpo_pipelines2__person_details_joined_in_0"
+  }, {
+    "id" : "5sCld7Sse2AfHM3Vx0S2r",
+    "source" : "E6vPmubuKGZCZG5XKbCjx$$PjVK-f2KRH5XnD_GLOr-Q",
+    "sourcePort" : "wwXYybMa5hhJLowY_kNDF$$Lwwnp4vMsprtHJzdaKlhm",
+    "target" : "KJY1jQCPwYVfTK7g6p0KO$$bF8wq8v1zg3UzoAugnbp9",
+    "targetPort" : "tmpo_pipelines2__person_details_joined_in_1"
+  } ],
+  "component" : "Pipeline"
+}

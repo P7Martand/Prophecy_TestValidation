@@ -1,0 +1,245 @@
+---
+version: 2
+sources:
+- name: "qa_prakhar_database.main"
+  database: "qa_prakhar_database"
+  schema: "main"
+  tables:
+  - name: "checkJoinVal"
+    description: ""
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "first_name"
+      dataType:
+        type: "String"
+    - name: "lastname"
+      dataType:
+        type: "String"
+    - name: "address"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "tables_to_tables"
+    columns:
+    - name: "c_tinyint"
+      dataType:
+        type: "BigInt"
+    - name: "c_smallint"
+      dataType:
+        type: "BigInt"
+    - name: "c_int"
+      dataType:
+        type: "BigInt"
+    - name: "c_float"
+      dataType:
+        type: "Double"
+    - name: "c_double"
+      dataType:
+        type: "Double"
+    - name: "c_decimal"
+      dataType:
+        type: "Double"
+    - name: "c_boolean"
+      dataType:
+        type: "Boolean"
+    - name: "c_null"
+      dataType:
+        type: "String"
+    - name: "c_emptystring"
+      dataType:
+        type: "String"
+    - name: "c_date"
+      dataType:
+        type: "Date"
+    - name: "c_timestamp"
+      dataType:
+        type: "Timestamp"
+    - name: "c_interval"
+      dataType:
+        type: "String"
+    - name: "c_time"
+      dataType:
+        type: "String"
+    - name: "c_array"
+      dataType:
+        type: "String"
+    - name: "c_struct"
+      dataType:
+        type: "String"
+    - name: "c_array_of_struct"
+      dataType:
+        type: "String"
+    - name: "c_struct_of_array"
+      dataType:
+        type: "String"
+    - name: "c_complex_struct"
+      dataType:
+        type: "String"
+    - name: "FileName"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "s3_to_table"
+    description: ""
+    columns:
+    - name: "c_tinyint"
+      dataType:
+        type: "BigInt"
+    - name: "c_smallint"
+      dataType:
+        type: "BigInt"
+    - name: "c_int"
+      dataType:
+        type: "BigInt"
+    - name: "c_float"
+      dataType:
+        type: "Double"
+    - name: "c_double"
+      dataType:
+        type: "Double"
+    - name: "c_decimal"
+      dataType:
+        type: "Double"
+    - name: "c_boolean"
+      dataType:
+        type: "Boolean"
+    - name: "c_null"
+      dataType:
+        type: "String"
+    - name: "c_emptystring"
+      dataType:
+        type: "String"
+    - name: "c_date"
+      dataType:
+        type: "Date"
+    - name: "c_timestamp"
+      dataType:
+        type: "Timestamp"
+    - name: "c_interval"
+      dataType:
+        type: "String"
+    - name: "c_time"
+      dataType:
+        type: "String"
+    - name: "c_array"
+      dataType:
+        type: "String"
+    - name: "c_struct"
+      dataType:
+        type: "String"
+    - name: "c_array_of_struct"
+      dataType:
+        type: "String"
+    - name: "c_struct_of_array"
+      dataType:
+        type: "String"
+    - name: "c_complex_struct"
+      dataType:
+        type: "String"
+    - name: "FileName"
+      dataType:
+        type: "String"
+    type: "table"
+- name: "qa_prakhar_database.qa_schema"
+  database: "qa_prakhar_database"
+  schema: "qa_schema"
+  tables:
+  - name: "sftp_to_table"
+    description: ""
+    columns:
+    - name: "id"
+      dataType:
+        type: "BigInt"
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "updated_at"
+      dataType:
+        type: "Date"
+    - name: "FileName"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "smatsheet_to_tables"
+    columns:
+    - name: "Primary_Column"
+      dataType:
+        type: "String"
+    - name: "Assigned_To"
+      dataType:
+        type: "String"
+    - name: "Status"
+      dataType:
+        type: "String"
+    - name: "Start_Date"
+      dataType:
+        type: "String"
+    - name: "End_Date"
+      dataType:
+        type: "String"
+    - name: "Duration"
+      dataType:
+        type: "String"
+    - name: "At_Risk"
+      dataType:
+        type: "String"
+    - name: "Modified_By"
+      dataType:
+        type: "String"
+    - name: "Modification_Date"
+      dataType:
+        type: "String"
+    - name: "Column10"
+      dataType:
+        type: "String"
+    - name: "Column11"
+      dataType:
+        type: "String"
+    - name: "Column12"
+      dataType:
+        type: "String"
+    - name: "Column13"
+      dataType:
+        type: "String"
+    - name: "Column14"
+      dataType:
+        type: "String"
+    - name: "Column15"
+      dataType:
+        type: "String"
+    - name: "Column16"
+      dataType:
+        type: "String"
+    - name: "Column17"
+      dataType:
+        type: "String"
+    - name: "Column18"
+      dataType:
+        type: "String"
+    - name: "Column19"
+      dataType:
+        type: "String"
+    - name: "Column20"
+      dataType:
+        type: "String"
+    - name: "Column21"
+      dataType:
+        type: "String"
+    - name: "Column22"
+      dataType:
+        type: "String"
+    - name: "Column23"
+      dataType:
+        type: "String"
+    - name: "Total_Date"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "sharepoint_to_tables"
+    columns: []
+    type: "table"
+  - name: "sharepoint1_to_tables"
+    columns: []
+    type: "table"

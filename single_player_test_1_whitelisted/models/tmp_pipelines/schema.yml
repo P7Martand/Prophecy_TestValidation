@@ -1,0 +1,30 @@
+---
+version: 2
+models:
+- name: "tmp_pipelines__person_details_joined"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__Reformat_3"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__Reformat_2"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__Limit_1"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__Filter_1"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__checkxa3_data"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__all_concatenated_dates"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__Reformat_4"
+  tags:
+  - "prophecy_temp"
+- name: "tmp_pipelines__smarsheet2"
+  tags:
+  - "prophecy_temp"

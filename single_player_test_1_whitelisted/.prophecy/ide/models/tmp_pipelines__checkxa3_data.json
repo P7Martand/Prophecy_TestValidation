@@ -1,0 +1,125 @@
+{
+  "id" : "tmp_pipelines__checkxa3_data",
+  "metainfo" : {
+    "label" : "tmp_pipelines__checkxa3_data",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"sftp_to_table\"",
+        "materialized" : "table",
+        "database" : "\"qa_prakhar_database\"",
+        "schema" : "\"qa_schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "03PHNKOWe4QsWH5_oVPQ7$$ZyNdVJtMXeYkVaTYlwhnC" : {
+      "id" : "03PHNKOWe4QsWH5_oVPQ7$$ZyNdVJtMXeYkVaTYlwhnC",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "sftp_to_table",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM checkxa3_data\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "km7qWVRcY2upUCqcD3gMl$$fOkbiFmLiospWFcrOXyhh",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "jKCaj3ngNvrB2hlM_0ZYX$$K31cMTtmg1NilDXStnLd0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "785iWJm2BdAb6eOx5dfVg$$3uWlqiPhNJmgo9RmbI0oH" : {
+      "id" : "785iWJm2BdAb6eOx5dfVg$$3uWlqiPhNJmgo9RmbI0oH",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "checkxa3_data",
+        "x" : 720,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from checkxa3_csv_1 where id == 1"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HJL-J06TqTV1uXC1u1kSo$$vHd1hgNBDCkp7zO0avYGK",
+          "slug" : "checkxa3_csv_1"
+        } ],
+        "outputs" : [ {
+          "id" : "kerN53gC2GIHIg3v81Iqr$$vU-eVWYTA96jEbDYsvuw-",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "checkxa3_csv_1_d9143631-278c-444c-82f8-083d522fb3f0" : {
+      "id" : "checkxa3_csv_1_d9143631-278c-444c-82f8-083d522fb3f0",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "checkxa3_csv_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('tmp_pipelines', 'checkxa3_csv_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "A9hpXFBjEsK1-brLxilCb$$83KQEhBJeOoKsuJh2y31-",
+    "source" : "785iWJm2BdAb6eOx5dfVg$$3uWlqiPhNJmgo9RmbI0oH",
+    "sourcePort" : "kerN53gC2GIHIg3v81Iqr$$vU-eVWYTA96jEbDYsvuw-",
+    "target" : "03PHNKOWe4QsWH5_oVPQ7$$ZyNdVJtMXeYkVaTYlwhnC",
+    "targetPort" : "km7qWVRcY2upUCqcD3gMl$$fOkbiFmLiospWFcrOXyhh"
+  }, {
+    "id" : "conn_checkxa3_csv_1_d9143631-278c-444c-82f8-083d522fb3f0_785iWJm2BdAb6eOx5dfVg$$3uWlqiPhNJmgo9RmbI0oH_HJL-J06TqTV1uXC1u1kSo$$vHd1hgNBDCkp7zO0avYGK",
+    "source" : "checkxa3_csv_1_d9143631-278c-444c-82f8-083d522fb3f0",
+    "sourcePort" : "output_port_0",
+    "target" : "785iWJm2BdAb6eOx5dfVg$$3uWlqiPhNJmgo9RmbI0oH",
+    "targetPort" : "HJL-J06TqTV1uXC1u1kSo$$vHd1hgNBDCkp7zO0avYGK"
+  } ],
+  "component" : "Model"
+}
