@@ -1,0 +1,7 @@
+c_int,c_string,c_boolean
+1,hello,true
+2,hi,false
+3,hello,true
+3,bonjour,false
+4,hi,true
+6,,false

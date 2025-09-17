@@ -1,0 +1,223 @@
+name: repro_issue2_whitelisted
+description: ''
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-09-17 17:33:10'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-09-17 17:33:15'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    createdAt: '2025-09-17 17:33:30'
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/basic_seed:
+    name: basic_seed
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/basic_seed.csv
+    createdAt: '2025-09-17 17:34:53'
+sqlSources:
+  .prophecy/metadata/sqlsources/qa_team_qa_database:
+    name: qa_team.qa_database
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-17 18:01:30'
+    tables:
+    - name: all_type_partitioned
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: TinyInt
+        - name: c_smallint
+          dataType:
+            type: SmallInt
+        - name: c_int
+          dataType:
+            type: Integer
+        - name: c_bigint
+          dataType:
+            type: Bigint
+        - name: c_float
+          dataType:
+            type: Float
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_string
+          dataType:
+            type: String
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_array
+          dataType:
+            type: Array
+            dataType:
+              type: String
+        - name: c_struct
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+        - name: p_int
+          dataType:
+            type: Integer
+        - name: p_string
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-17 18:01:30'
+      tableType: table
+    - name: dest_analyst_parent
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: TinyInt
+        - name: c_smallint
+          dataType:
+            type: SmallInt
+        - name: c_int
+          dataType:
+            type: Integer
+        - name: c_bigint
+          dataType:
+            type: Bigint
+        - name: c_float
+          dataType:
+            type: Float
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_string
+          dataType:
+            type: String
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_array
+          dataType:
+            type: Array
+            dataType:
+              type: String
+        - name: c_struct
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+        - name: p_int
+          dataType:
+            type: Integer
+        - name: p_string
+          dataType:
+            type: String
+        - name: c_parameter_string
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-09-17 18:07:03'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: abhisheks+e2etests@prophecy.io
+  createdAt: '2025-09-17 17:33:10'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/parent_pipeline:
+    name: parent_pipeline
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/parent_pipeline/schema.yml
+    - models/parent_pipeline/parent_pipeline__Reformat_5.sql
+    - models/parent_pipeline/parent_pipeline__Reformat_1.sql
+    - models/parent_pipeline/parent_pipeline__Reformat_3.sql
+    - models/parent_pipeline/parent_pipeline__customer_data_with_details.sql
+    - models/parent_pipeline/parent_pipeline__Reformat_4.sql
+    - models/parent_pipeline/parent_pipeline__Limit_2.sql
+    - .prophecy/ide/pipelines/parent_pipeline.json
+    - pipelines/parent_pipeline.py
+    createdAt: '2025-09-17 17:33:30'
+sqlBusinessApps: {}

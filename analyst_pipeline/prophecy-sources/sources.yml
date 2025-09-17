@@ -1,0 +1,112 @@
+---
+version: 2
+sources:
+- name: "qa_team.qa_database"
+  database: "qa_team"
+  schema: "qa_database"
+  tables:
+  - name: "all_type_partitioned"
+    columns:
+    - name: "c_tinyint"
+      dataType:
+        type: "TinyInt"
+    - name: "c_smallint"
+      dataType:
+        type: "SmallInt"
+    - name: "c_int"
+      dataType:
+        type: "Integer"
+    - name: "c_bigint"
+      dataType:
+        type: "Bigint"
+    - name: "c_float"
+      dataType:
+        type: "Float"
+    - name: "c_double"
+      dataType:
+        type: "Double"
+    - name: "c_string"
+      dataType:
+        type: "String"
+    - name: "c_boolean"
+      dataType:
+        type: "Boolean"
+    - name: "c_array"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "String"
+    - name: "c_struct"
+      dataType:
+        type: "Struct"
+        fields:
+        - name: "city"
+          dataType:
+            type: "String"
+        - name: "state"
+          dataType:
+            type: "String"
+        - name: "pin"
+          dataType:
+            type: "Bigint"
+    - name: "p_int"
+      dataType:
+        type: "Integer"
+    - name: "p_string"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "dest_analyst_parent"
+    columns:
+    - name: "c_tinyint"
+      dataType:
+        type: "TinyInt"
+    - name: "c_smallint"
+      dataType:
+        type: "SmallInt"
+    - name: "c_int"
+      dataType:
+        type: "Integer"
+    - name: "c_bigint"
+      dataType:
+        type: "Bigint"
+    - name: "c_float"
+      dataType:
+        type: "Float"
+    - name: "c_double"
+      dataType:
+        type: "Double"
+    - name: "c_string"
+      dataType:
+        type: "String"
+    - name: "c_boolean"
+      dataType:
+        type: "Boolean"
+    - name: "c_array"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "String"
+    - name: "c_struct"
+      dataType:
+        type: "Struct"
+        fields:
+        - name: "city"
+          dataType:
+            type: "String"
+        - name: "state"
+          dataType:
+            type: "String"
+        - name: "pin"
+          dataType:
+            type: "Bigint"
+    - name: "p_int"
+      dataType:
+        type: "Integer"
+    - name: "p_string"
+      dataType:
+        type: "String"
+    - name: "c_parameter_string"
+      dataType:
+        type: "String"
+    type: "table"

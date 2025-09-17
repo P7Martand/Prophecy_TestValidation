@@ -1,0 +1,1092 @@
+{
+  "id" : "parent_pipeline__Limit_2",
+  "metainfo" : {
+    "label" : "parent_pipeline__Limit_2",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"qa_team\"",
+        "schema" : "\"qa_database\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS" : {
+      "id" : "2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_3",
+        "x" : -1220,
+        "y" : -240,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from all_type_non_partitioned_different_rows_1 where c_int != (\n    (select count(*) from fsi_2022_download_xlsx_1) +\n    (select count(*) from S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1)\n\n)"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Qx_qt-UyItGagG0AK4228$$RGDb2vbPKBrDd_gk1O8t9",
+          "slug" : "fsi_2022_download_xlsx_1"
+        }, {
+          "id" : "cve0skfkkHJOqKgRlXolJ$$ArwJay91AEYeE6ZLzU9nx",
+          "slug" : "all_type_non_partitioned_different_rows_1"
+        }, {
+          "id" : "cCjnjmz_ahuVbn_87tE5q$$JGi8ous_botCtdlJrl1Fq",
+          "slug" : "S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1"
+        } ],
+        "outputs" : [ {
+          "id" : "sJV1oneO5DN4qtqnLNEW_$$6M-X7vU4Ns-Jjv1P__tZK",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "DPTc94ybD4GfxeYblcQgz$$bg_bJ-Ak5hAEE5QQ3A-re" : {
+      "id" : "DPTc94ybD4GfxeYblcQgz$$bg_bJ-Ak5hAEE5QQ3A-re",
+      "component" : "MultiColumnRename",
+      "metadata" : {
+        "label" : "MultiColumnRename_1",
+        "x" : -1140,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "DynamicSelect_1" ],
+        "columnNames" : [ "c_int", "c_float", "Name", "Value" ],
+        "suffix" : "",
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnRename",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['DynamicSelect_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"Name\", \"dataType\": \"String\"}, {\"name\": \"Value\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"c_int\", \"c_float\", \"Name\", \"Value\"]"
+          }, {
+            "name" : "renameMethod",
+            "value" : "editPrefixSuffix"
+          }, {
+            "name" : "editOperation",
+            "value" : "Add"
+          }, {
+            "name" : "editType",
+            "value" : "Prefix"
+          }, {
+            "name" : "editWith",
+            "value" : "PRE_"
+          }, {
+            "name" : "customExpression",
+            "value" : ""
+          } ]
+        },
+        "editOperation" : "Add",
+        "editWith" : "PRE_",
+        "schema" : "[{\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"Name\", \"dataType\": \"String\"}, {\"name\": \"Value\", \"dataType\": \"String\"}]",
+        "customExpression" : "",
+        "renameMethod" : "editPrefixSuffix",
+        "editType" : "Prefix"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5s05szFPA29QjJyn1LkOp$$f07Lc1bPoIyykRdYZ3VJG",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "nm5D_bWlaZ-j6g2fvvgf-$$s88uOomW5GEq9AX-Kr5UV",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ilwpH4nO25kYzjVuYlU51$$uWy43yh5lhxL4TQFDi4l_" : {
+      "id" : "ilwpH4nO25kYzjVuYlU51$$uWy43yh5lhxL4TQFDi4l_",
+      "component" : "Transpose",
+      "metadata" : {
+        "label" : "Transpose_1",
+        "x" : -1420,
+        "y" : 380,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "all_type_partitioned_1" ],
+        "_oldMacroProperties" : {
+          "macroName" : "Transpose",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['all_type_partitioned_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_double\", \"dataType\": \"Double\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"p_int\", \"dataType\": \"Integer\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "nameColumn",
+            "value" : "Name"
+          }, {
+            "name" : "valueColumn",
+            "value" : "Value"
+          }, {
+            "name" : "keyColumns",
+            "value" : "[\"c_smallint\", \"c_int\", \"c_bigint\", \"c_float\", \"c_tinyint\", \"c_struct\", \"c_array\", \"c_boolean\", \"p_string\"]"
+          }, {
+            "name" : "dataColumns",
+            "value" : "[\"c_double\", \"c_string\"]"
+          } ]
+        },
+        "dataColumns" : [ "c_double", "c_string" ],
+        "customNames" : false,
+        "schema" : "[{\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_double\", \"dataType\": \"Double\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"p_int\", \"dataType\": \"Integer\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}]",
+        "valueColumn" : "Value",
+        "keyColumns" : [ "c_smallint", "c_int", "c_bigint", "c_float", "c_tinyint", "c_struct", "c_array", "c_boolean", "p_string" ],
+        "nameColumn" : "Name"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cwTUeHxKAQd7Z8T7uaj8l$$6v6c_s7zTq5qKtPAQxJLA",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "qXSgmY4SGTm-ejoT3CE2M$$AGj0SyBayMa84u3993Y0U",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "all_type_table_1_rcYqOHk7uY6mu7C9nFc-W$$nCLOuMY9uhE9-qos2GQNs" : {
+      "id" : "all_type_table_1_rcYqOHk7uY6mu7C9nFc-W$$nCLOuMY9uhE9-qos2GQNs",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "all_type_table_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_11",
+          "id" : "output_port_11",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'all_type_table_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_11",
+          "slug" : "input_port_11"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_11",
+          "slug" : "output_port_11"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "cOgCCep-HupAjg79QRwuQ$$OwnnhuvIdFgN1wocOkwok" : {
+      "id" : "cOgCCep-HupAjg79QRwuQ$$OwnnhuvIdFgN1wocOkwok",
+      "component" : "TextToColumns",
+      "metadata" : {
+        "label" : "split_text_columns",
+        "x" : -560,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "split_strategy" : "splitRows",
+        "splitColumnPrefix" : "root",
+        "relation_name" : [ "UnionByName_1" ],
+        "columnNames" : "p_string_suffix",
+        "noOfColumns" : 1,
+        "_oldMacroProperties" : {
+          "macroName" : "TextToColumns",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['UnionByName_1']"
+          }, {
+            "name" : "columnNames",
+            "value" : "p_string_suffix"
+          }, {
+            "name" : "delimiter",
+            "value" : "a"
+          }, {
+            "name" : "split_strategy",
+            "value" : "splitRows"
+          }, {
+            "name" : "noOfColumns",
+            "value" : "1"
+          }, {
+            "name" : "leaveExtraCharLastCol",
+            "value" : "Leave extra in last column"
+          }, {
+            "name" : "splitColumnPrefix",
+            "value" : "root"
+          }, {
+            "name" : "splitColumnSuffix",
+            "value" : "generated"
+          }, {
+            "name" : "splitRowsColumnName",
+            "value" : "generated_column"
+          } ]
+        },
+        "splitColumnSuffix" : "generated",
+        "splitRowsColumnName" : "generated_column",
+        "leaveExtraCharLastCol" : "Leave extra in last column",
+        "delimiter" : "a"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QpIQtFNLPKyJQaJu9JmUn$$R90dI_QX3JEAM6fgawKng",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "mIFfFodMJIDtC_Gg6OL_5$$37ac0kJKdokgL4qMBeeYv",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "EqAMYi8DUVo9oXs5wrpA3$$VVcacFmzLWoHzzFbe3GZY" : {
+      "id" : "EqAMYi8DUVo9oXs5wrpA3$$VVcacFmzLWoHzzFbe3GZY",
+      "component" : "DynamicSelect",
+      "metadata" : {
+        "label" : "DynamicSelect_1",
+        "x" : -1260,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "targetTypes" : "[\"Boolean\", \"String\", \"Integer\", \"Short\", \"Byte\", \"Long\", \"Float\", \"Decimal\", \"Binary\", \"Date\", \"Timestamp\", \"Struct\"]",
+        "structTypeChecked" : true,
+        "relation_name" : [ "Transpose_1" ],
+        "_oldMacroProperties" : {
+          "macroName" : "DynamicSelect",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Transpose_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"Name\", \"dataType\": \"String\"}, {\"name\": \"Value\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "targetTypes",
+            "value" : "[\"Boolean\", \"String\", \"Integer\", \"Short\", \"Byte\", \"Long\", \"Float\", \"Decimal\", \"Binary\", \"Date\", \"Timestamp\", \"Struct\"]"
+          }, {
+            "name" : "customExpression",
+            "value" : ""
+          }, {
+            "name" : "selectUsing",
+            "value" : "SELECT_FIELD_TYPES"
+          } ]
+        },
+        "dateTypeChecked" : true,
+        "binaryTypeChecked" : true,
+        "strTypeChecked" : true,
+        "floatTypeChecked" : true,
+        "timestampTypeChecked" : true,
+        "boolTypeChecked" : true,
+        "schema" : "[{\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"Name\", \"dataType\": \"String\"}, {\"name\": \"Value\", \"dataType\": \"String\"}]",
+        "customExpression" : "",
+        "longTypeChecked" : true,
+        "doubleTypeChecked" : false,
+        "intTypeChecked" : true,
+        "byteTypeChecked" : true,
+        "decimalTypeChecked" : true,
+        "selectUsing" : "SELECT_FIELD_TYPES",
+        "shortTypeChecked" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0H-TXtfj9VXJmhSZfnAfa$$vrKXBtq6G50GFlKEhm5a7",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "ELLR9NL98jH6ARHQQxtYO$$_09NV0m5qts8ozX3jy4nN",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ALL_TYPE_TABLE_2_15E4pKahln-HBu9JghgTn$$tcMczVdyHhKPvQc-M7Uv3" : {
+      "id" : "ALL_TYPE_TABLE_2_15E4pKahln-HBu9JghgTn$$tcMczVdyHhKPvQc-M7Uv3",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "ALL_TYPE_TABLE_2"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'ALL_TYPE_TABLE_2') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "fsi_2022_download_xlsx_1_2hZUALht-vyx_60EvzM81$$xsuRb3WO_v4TXgn6ySeXH" : {
+      "id" : "fsi_2022_download_xlsx_1_2hZUALht-vyx_60EvzM81$$xsuRb3WO_v4TXgn6ySeXH",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "fsi_2022_download_xlsx_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_2",
+          "id" : "output_port_2",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'fsi_2022_download_xlsx_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_2",
+          "slug" : "input_port_2"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_2",
+          "slug" : "output_port_2"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "TIrIctRXUVdv_rO2o2uVV$$ZKWk_1ZlemfDw_foJxfFq" : {
+      "id" : "TIrIctRXUVdv_rO2o2uVV$$ZKWk_1ZlemfDw_foJxfFq",
+      "component" : "MultiColumnEdit",
+      "metadata" : {
+        "label" : "MultiColumnEdit_1",
+        "x" : -860,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "changeOutputFieldName" : true,
+        "relation_name" : [ "DataCleansing_1" ],
+        "columnNames" : [ "PRE_c_int", "PRE_c_float", "c_boolean", "p_string", "PRE_Name", "PRE_Value" ],
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnEdit",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['DataCleansing_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"PRE_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"PRE_c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"PRE_c_int\", \"PRE_c_float\", \"c_boolean\", \"p_string\", \"PRE_Name\", \"PRE_Value\"]"
+          }, {
+            "name" : "expressionToBeApplied",
+            "value" : "concat(column_name, column_value)"
+          }, {
+            "name" : "changeOutputFieldName",
+            "value" : "true"
+          }, {
+            "name" : "prefixSuffixOption",
+            "value" : "Suffix"
+          }, {
+            "name" : "prefixSuffixToBeAdded",
+            "value" : "_suffix"
+          } ]
+        },
+        "schema" : "[{\"name\": \"PRE_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"PRE_c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value\", \"dataType\": \"String\"}]",
+        "expressionToBeApplied" : "concat(column_name, column_value)",
+        "prefixSuffixToBeAdded" : "_suffix",
+        "prefixSuffixOption" : "Suffix"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QSEBiAbmpneKu_xuZYBG4$$VK7T6YWs9S7nUMWdRjNdP",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "6oF17cgJV9TytggY5xn6Y$$0BL7v1WuWMC3UgLEDfoUT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "js7y4C2hdlLl5O9Tr7rDy$$sNg-pXAm4qzQLEKCI8dSQ" : {
+      "id" : "js7y4C2hdlLl5O9Tr7rDy$$sNg-pXAm4qzQLEKCI8dSQ",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_partitioned_1",
+        "x" : -1580,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_partitioned",
+          "sourceType" : "Source",
+          "sourceName" : "qa_team.qa_database",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "iywwfpT5ifYAH6LNq986M$$osJHBMqNq1TVb1b-itcDu",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "all_type_json_json_1_OwHS25KiZUCOCBpxMeL69$$lpxlOOfp_2f2qjzT6ga9F" : {
+      "id" : "all_type_json_json_1_OwHS25KiZUCOCBpxMeL69$$lpxlOOfp_2f2qjzT6ga9F",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "all_type_json_json_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_9",
+          "id" : "output_port_9",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'all_type_json_json_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_9",
+          "slug" : "input_port_9"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_9",
+          "slug" : "output_port_9"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j" : {
+      "id" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_2",
+        "x" : -220,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from customer_data_with_details where c_int != (\n    (select count(*) from mongo_deepNestedData_1) +\n    (select count(*) from all_type_table_1) +\n    (select count(*) from ALL_TYPE_TABLE_2) +\n    (select count(*) from file_example_XLSX_5000_1) +\n    (select count(*) from all_type_json_json_1) +\n    (select count(*) from SQLStatement_3) +\n    (select count(*) from FuzzyMatch_1)\n)"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Tu_AiZ-rt55vfBxk9kT3K$$-ibzI46xPcULpWlHKXriz",
+          "slug" : "customer_data_with_details"
+        }, {
+          "id" : "QKbu4etUudnGIlXzxQYKm$$y_t9nI8CQ89i4PeXHY263",
+          "slug" : "mongo_deepNestedData_1"
+        }, {
+          "id" : "ZQ1-U4knLHV6m1VA5kFjP$$Kg1rl2dQuvpXXpwBQwtgN",
+          "slug" : "all_type_table_1"
+        }, {
+          "id" : "OkU4t8tlcjExf7H1VpDD6$$E1I4Fv6dVvPeNg5hdUH2K",
+          "slug" : "ALL_TYPE_TABLE_2"
+        }, {
+          "id" : "eMMPOyWmH9g7AZX8pXfHQ$$DKuZhAPqggfWCKBAQOVMC",
+          "slug" : "file_example_XLSX_5000_1"
+        }, {
+          "id" : "tzYxuEap34Kvf69UNg7OJ$$8Q7Qa-s8uCQ6S2LZizhQp",
+          "slug" : "all_type_json_json_1"
+        }, {
+          "id" : "OYz6xT1Mtq0GleD2avVCc$$8YYLgf8V5DuwImK2yAzY2",
+          "slug" : "SQLStatement_3"
+        }, {
+          "id" : "cq-rAtQVrsGLpBOBsDJUQ$$ikQowbPbONnd13MQWbo7u",
+          "slug" : "FuzzyMatch_1"
+        } ],
+        "outputs" : [ {
+          "id" : "-g4nWtTaT31Ygn6hICK11$$-hd2c8u0l7ba6MB-T1WN_",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "all_type_non_partitioned_different_rows_1_7jyv4AsRAmZsckKqs3f1d$$dLTiHGg8MKPluz2vecWYi" : {
+      "id" : "all_type_non_partitioned_different_rows_1_7jyv4AsRAmZsckKqs3f1d$$dLTiHGg8MKPluz2vecWYi",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "all_type_non_partitioned_different_rows_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_3",
+          "id" : "output_port_3",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'all_type_non_partitioned_different_rows_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_3",
+          "slug" : "input_port_3"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_3",
+          "slug" : "output_port_3"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1_rJfl_th-U5Dwv5SqxZ0EX$$EaDk4_EvAR9qlKckzAlrX" : {
+      "id" : "S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1_rJfl_th-U5Dwv5SqxZ0EX$$EaDk4_EvAR9qlKckzAlrX",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_4",
+          "id" : "output_port_4",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_4",
+          "slug" : "input_port_4"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_4",
+          "slug" : "output_port_4"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "customer_data_with_details_zmq9ztO-7o2NUIgQUAYVz$$Q7LkonD51V3SS4ma43773" : {
+      "id" : "customer_data_with_details_zmq9ztO-7o2NUIgQUAYVz$$Q7LkonD51V3SS4ma43773",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "customer_data_with_details"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_6",
+          "id" : "output_port_6",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ ref('parent_pipeline__customer_data_with_details') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_6",
+          "slug" : "input_port_6"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_6",
+          "slug" : "output_port_6"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "5TMUjrrf_2d6VK73D9tM2$$wxRLk_VrHxqeOx10Wr5Em" : {
+      "id" : "5TMUjrrf_2d6VK73D9tM2$$wxRLk_VrHxqeOx10Wr5Em",
+      "component" : "FuzzyMatch",
+      "metadata" : {
+        "label" : "FuzzyMatch_1",
+        "x" : -420,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "split_text_columns" ],
+        "includeSimilarityScore" : false,
+        "_oldMacroProperties" : {
+          "macroName" : "FuzzyMatch",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['split_text_columns']"
+          }, {
+            "name" : "mode",
+            "value" : "PURGE"
+          }, {
+            "name" : "sourceIdCol",
+            "value" : ""
+          }, {
+            "name" : "recordIdCol",
+            "value" : "PRE_c_int"
+          }, {
+            "name" : "matchThresholdPercentage",
+            "value" : "80"
+          }, {
+            "name" : "includeSimilarityScore",
+            "value" : "false"
+          } ]
+        },
+        "matchFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "PRE_c_float",
+            "matchFunction" : "custom"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "c_boolean",
+            "matchFunction" : "exact"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "PRE_Value_suffix",
+            "matchFunction" : "equals"
+          }
+        } ],
+        "sourceIdCol" : "",
+        "matchThresholdPercentage" : 80,
+        "activeTab" : "configuration",
+        "recordIdCol" : "PRE_c_int",
+        "mode" : "PURGE"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "G-71iix0QJCcw9oG1JQfv$$zHYhc085PpgLYttzy0gdU",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "awu_aruPOU91TJ8C4nYDy$$NajTy9zM1qhFu3QTSyr2E",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "file_example_XLSX_5000_1_ojRB1aoGdhVqRvfdynBb-$$C-dkJfBCOcHBpi4Os-hAJ" : {
+      "id" : "file_example_XLSX_5000_1_ojRB1aoGdhVqRvfdynBb-$$C-dkJfBCOcHBpi4Os-hAJ",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "file_example_XLSX_5000_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_10",
+          "id" : "output_port_10",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'file_example_XLSX_5000_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_10",
+          "slug" : "input_port_10"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_10",
+          "slug" : "output_port_10"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "mongo_deepNestedData_1_uua7Fh1Vd3yHJ8fP0hFKg$$PzZczU2FhNwgLA4P48nsX" : {
+      "id" : "mongo_deepNestedData_1_uua7Fh1Vd3yHJ8fP0hFKg$$PzZczU2FhNwgLA4P48nsX",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "mongo_deepNestedData_1"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_8",
+          "id" : "output_port_8",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('parent_pipeline', 'mongo_deepNestedData_1') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_8",
+          "slug" : "input_port_8"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_8",
+          "slug" : "output_port_8"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "YVVvDaLlzc-kKGfc_n4Na$$l1wI05NnqYOmlYhb_PuFI" : {
+      "id" : "YVVvDaLlzc-kKGfc_n4Na$$l1wI05NnqYOmlYhb_PuFI",
+      "component" : "DataCleansing",
+      "metadata" : {
+        "label" : "DataCleansing_1",
+        "x" : -1000,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "trimWhiteSpace" : true,
+        "replaceNullForNumericFields" : true,
+        "cleanLetters" : true,
+        "replaceNullTextWith" : "NA",
+        "removeRowNullAllCols" : true,
+        "replaceNullTextFields" : true,
+        "relation_name" : [ "MultiColumnRename_1" ],
+        "replaceNullDateWith" : "1970-01-01",
+        "columnNames" : [ "PRE_c_int", "PRE_c_float", "c_boolean", "p_string", "PRE_Name", "PRE_Value" ],
+        "replaceNullTimeFields" : false,
+        "_oldMacroProperties" : {
+          "macroName" : "DataCleansing",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['MultiColumnRename_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"PRE_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"PRE_c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "modifyCase",
+            "value" : "makeUppercase"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"PRE_c_int\", \"PRE_c_float\", \"c_boolean\", \"p_string\", \"PRE_Name\", \"PRE_Value\"]"
+          }, {
+            "name" : "replaceNullTextFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullTextWith",
+            "value" : "NA"
+          }, {
+            "name" : "replaceNullForNumericFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullNumericWith",
+            "value" : "0"
+          }, {
+            "name" : "trimWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "removeTabsLineBreaksAndDuplicateWhitespace",
+            "value" : "true"
+          }, {
+            "name" : "allWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "cleanLetters",
+            "value" : "true"
+          }, {
+            "name" : "cleanPunctuations",
+            "value" : "true"
+          }, {
+            "name" : "cleanNumbers",
+            "value" : "true"
+          }, {
+            "name" : "removeRowNullAllCols",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullDateFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullDateWith",
+            "value" : "1970-01-01"
+          }, {
+            "name" : "replaceNullTimeFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullTimeWith",
+            "value" : "1970-01-01 00:00:00.0"
+          } ]
+        },
+        "replaceNullTimeWith" : "1970-01-01 00:00:00.0",
+        "schema" : "[{\"name\": \"PRE_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"PRE_c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value\", \"dataType\": \"String\"}]",
+        "allWhiteSpace" : true,
+        "removeTabsLineBreaksAndDuplicateWhitespace" : true,
+        "modifyCase" : "makeUppercase",
+        "cleanPunctuations" : true,
+        "replaceNullDateFields" : false,
+        "cleanNumbers" : true,
+        "replaceNullNumericWith" : 0
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lsKmY-LEahR-NBQQCHt25$$5v_m4FbRh2UfMe3tEo5Bu",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "wVQt-6I-kAXGCUsaIv2ke$$3cM8KXPVNy_t3LWfLaRit",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Limit_2_SMAJiYmsCQw2Mp9jCh72F$$_CiuQ0hzJteKgiDZOAuNk" : {
+      "id" : "Limit_2_SMAJiYmsCQw2Mp9jCh72F$$_CiuQ0hzJteKgiDZOAuNk",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Limit_2"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Limit_2\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_12",
+          "slug" : "input_port_12"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_12",
+          "slug" : "output_port_12"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sTuOjMTlivWZAbtnGWihM$$R0gCxt2wdBf8e_uQ5qSS9" : {
+      "id" : "sTuOjMTlivWZAbtnGWihM$$R0gCxt2wdBf8e_uQ5qSS9",
+      "component" : "UnionByName",
+      "metadata" : {
+        "label" : "UnionByName_1",
+        "x" : -720,
+        "y" : 360,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "MultiColumnEdit_1", "MultiColumnEdit_1" ],
+        "schemas" : [ "[{\"name\": \"PRE_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"PRE_c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value\", \"dataType\": \"String\"}, {\"name\": \"PRE_c_int_suffix\", \"dataType\": \"String\"}, {\"name\": \"PRE_c_float_suffix\", \"dataType\": \"String\"}, {\"name\": \"c_boolean_suffix\", \"dataType\": \"String\"}, {\"name\": \"p_string_suffix\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name_suffix\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value_suffix\", \"dataType\": \"String\"}]", "[{\"name\": \"PRE_c_int\", \"dataType\": \"Integer\"}, {\"name\": \"PRE_c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"p_string\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value\", \"dataType\": \"String\"}, {\"name\": \"PRE_c_int_suffix\", \"dataType\": \"String\"}, {\"name\": \"PRE_c_float_suffix\", \"dataType\": \"String\"}, {\"name\": \"c_boolean_suffix\", \"dataType\": \"String\"}, {\"name\": \"p_string_suffix\", \"dataType\": \"String\"}, {\"name\": \"PRE_Name_suffix\", \"dataType\": \"String\"}, {\"name\": \"PRE_Value_suffix\", \"dataType\": \"String\"}]" ],
+        "missingColumnOps" : "nameBasedUnionOperation",
+        "_oldMacroProperties" : {
+          "macroName" : "UnionByName",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "[\"MultiColumnEdit_1\", \"MultiColumnEdit_1\"]"
+          }, {
+            "name" : "schemas",
+            "value" : "[\"[{\\\"name\\\": \\\"PRE_c_int\\\", \\\"dataType\\\": \\\"Integer\\\"}, {\\\"name\\\": \\\"PRE_c_float\\\", \\\"dataType\\\": \\\"Float\\\"}, {\\\"name\\\": \\\"c_struct\\\", \\\"dataType\\\": \\\"Struct\\\"}, {\\\"name\\\": \\\"c_boolean\\\", \\\"dataType\\\": \\\"Boolean\\\"}, {\\\"name\\\": \\\"p_string\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Name\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Value\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_c_int_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_c_float_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"c_boolean_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"p_string_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Name_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Value_suffix\\\", \\\"dataType\\\": \\\"String\\\"}]\", \"[{\\\"name\\\": \\\"PRE_c_int\\\", \\\"dataType\\\": \\\"Integer\\\"}, {\\\"name\\\": \\\"PRE_c_float\\\", \\\"dataType\\\": \\\"Float\\\"}, {\\\"name\\\": \\\"c_struct\\\", \\\"dataType\\\": \\\"Struct\\\"}, {\\\"name\\\": \\\"c_boolean\\\", \\\"dataType\\\": \\\"Boolean\\\"}, {\\\"name\\\": \\\"p_string\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Name\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Value\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_c_int_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_c_float_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"c_boolean_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"p_string_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Name_suffix\\\", \\\"dataType\\\": \\\"String\\\"}, {\\\"name\\\": \\\"PRE_Value_suffix\\\", \\\"dataType\\\": \\\"String\\\"}]\"]"
+          }, {
+            "name" : "missingColumnOps",
+            "value" : "nameBasedUnionOperation"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "P-Q9YWeJL5KtcBGKkDLGj$$6bldmi3_SgFMKh3OyEJDy",
+          "slug" : "in0"
+        }, {
+          "id" : "Cx0FCn99ylS8LLNXTBuJj$$i9QUpOP0yy-Jj0ith8vaz",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "5vcVLLRPIHakoUQYf4kpK$$bgKOsgBc6WFlNau_tu5Pk",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Sui1mrjYnLaw7d8wwtBVo$$13UTHdXBTDFEHcYuicXic" : {
+      "id" : "Sui1mrjYnLaw7d8wwtBVo$$13UTHdXBTDFEHcYuicXic",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_2",
+        "x" : 80,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pBt_ZC8YkjBYtgVD0eLDy$$OWRRHgYmJZ1ixulzq9K6J",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "SMAJiYmsCQw2Mp9jCh72F$$_CiuQ0hzJteKgiDZOAuNk",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_Sui1mrjYnLaw7d8wwtBVo$$13UTHdXBTDFEHcYuicXic_Limit_2_SMAJiYmsCQw2Mp9jCh72F$$_CiuQ0hzJteKgiDZOAuNk",
+    "source" : "Sui1mrjYnLaw7d8wwtBVo$$13UTHdXBTDFEHcYuicXic",
+    "sourcePort" : "SMAJiYmsCQw2Mp9jCh72F$$_CiuQ0hzJteKgiDZOAuNk",
+    "target" : "Limit_2_SMAJiYmsCQw2Mp9jCh72F$$_CiuQ0hzJteKgiDZOAuNk",
+    "targetPort" : "input_port_12"
+  }, {
+    "id" : "Aq6_7XTybEUALqHL5nY8S",
+    "source" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "sourcePort" : "-g4nWtTaT31Ygn6hICK11$$-hd2c8u0l7ba6MB-T1WN_",
+    "target" : "Sui1mrjYnLaw7d8wwtBVo$$13UTHdXBTDFEHcYuicXic",
+    "targetPort" : "pBt_ZC8YkjBYtgVD0eLDy$$OWRRHgYmJZ1ixulzq9K6J"
+  }, {
+    "id" : "Y3zPXwquWYTHTHkwAKlBj",
+    "source" : "2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS",
+    "sourcePort" : "sJV1oneO5DN4qtqnLNEW_$$6M-X7vU4Ns-Jjv1P__tZK",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "OYz6xT1Mtq0GleD2avVCc$$8YYLgf8V5DuwImK2yAzY2"
+  }, {
+    "id" : "LlK7ab543XTLawFJ34CTd",
+    "source" : "5TMUjrrf_2d6VK73D9tM2$$wxRLk_VrHxqeOx10Wr5Em",
+    "sourcePort" : "awu_aruPOU91TJ8C4nYDy$$NajTy9zM1qhFu3QTSyr2E",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "cq-rAtQVrsGLpBOBsDJUQ$$ikQowbPbONnd13MQWbo7u"
+  }, {
+    "id" : "Rzaasa500Fuec4BqcBPfu",
+    "source" : "customer_data_with_details_zmq9ztO-7o2NUIgQUAYVz$$Q7LkonD51V3SS4ma43773",
+    "sourcePort" : "output_port_6",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "Tu_AiZ-rt55vfBxk9kT3K$$-ibzI46xPcULpWlHKXriz"
+  }, {
+    "id" : "conn_mongo_deepNestedData_1_uua7Fh1Vd3yHJ8fP0hFKg$$PzZczU2FhNwgLA4P48nsX_zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j_QKbu4etUudnGIlXzxQYKm$$y_t9nI8CQ89i4PeXHY263",
+    "source" : "mongo_deepNestedData_1_uua7Fh1Vd3yHJ8fP0hFKg$$PzZczU2FhNwgLA4P48nsX",
+    "sourcePort" : "output_port_8",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "QKbu4etUudnGIlXzxQYKm$$y_t9nI8CQ89i4PeXHY263"
+  }, {
+    "id" : "conn_all_type_json_json_1_OwHS25KiZUCOCBpxMeL69$$lpxlOOfp_2f2qjzT6ga9F_zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j_tzYxuEap34Kvf69UNg7OJ$$8Q7Qa-s8uCQ6S2LZizhQp",
+    "source" : "all_type_json_json_1_OwHS25KiZUCOCBpxMeL69$$lpxlOOfp_2f2qjzT6ga9F",
+    "sourcePort" : "output_port_9",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "tzYxuEap34Kvf69UNg7OJ$$8Q7Qa-s8uCQ6S2LZizhQp"
+  }, {
+    "id" : "conn_file_example_XLSX_5000_1_ojRB1aoGdhVqRvfdynBb-$$C-dkJfBCOcHBpi4Os-hAJ_zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j_eMMPOyWmH9g7AZX8pXfHQ$$DKuZhAPqggfWCKBAQOVMC",
+    "source" : "file_example_XLSX_5000_1_ojRB1aoGdhVqRvfdynBb-$$C-dkJfBCOcHBpi4Os-hAJ",
+    "sourcePort" : "output_port_10",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "eMMPOyWmH9g7AZX8pXfHQ$$DKuZhAPqggfWCKBAQOVMC"
+  }, {
+    "id" : "conn_all_type_table_1_rcYqOHk7uY6mu7C9nFc-W$$nCLOuMY9uhE9-qos2GQNs_zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j_ZQ1-U4knLHV6m1VA5kFjP$$Kg1rl2dQuvpXXpwBQwtgN",
+    "source" : "all_type_table_1_rcYqOHk7uY6mu7C9nFc-W$$nCLOuMY9uhE9-qos2GQNs",
+    "sourcePort" : "output_port_11",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "ZQ1-U4knLHV6m1VA5kFjP$$Kg1rl2dQuvpXXpwBQwtgN"
+  }, {
+    "id" : "conn_ALL_TYPE_TABLE_2_15E4pKahln-HBu9JghgTn$$tcMczVdyHhKPvQc-M7Uv3_zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j_OkU4t8tlcjExf7H1VpDD6$$E1I4Fv6dVvPeNg5hdUH2K",
+    "source" : "ALL_TYPE_TABLE_2_15E4pKahln-HBu9JghgTn$$tcMczVdyHhKPvQc-M7Uv3",
+    "sourcePort" : "output_port_0",
+    "target" : "zrtgaeMHqpFcarl7VwakY$$xdfOOYDGoAvUeumGqZt7j",
+    "targetPort" : "OkU4t8tlcjExf7H1VpDD6$$E1I4Fv6dVvPeNg5hdUH2K"
+  }, {
+    "id" : "conn_fsi_2022_download_xlsx_1_2hZUALht-vyx_60EvzM81$$xsuRb3WO_v4TXgn6ySeXH_2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS_Qx_qt-UyItGagG0AK4228$$RGDb2vbPKBrDd_gk1O8t9",
+    "source" : "fsi_2022_download_xlsx_1_2hZUALht-vyx_60EvzM81$$xsuRb3WO_v4TXgn6ySeXH",
+    "sourcePort" : "output_port_2",
+    "target" : "2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS",
+    "targetPort" : "Qx_qt-UyItGagG0AK4228$$RGDb2vbPKBrDd_gk1O8t9"
+  }, {
+    "id" : "conn_all_type_non_partitioned_different_rows_1_7jyv4AsRAmZsckKqs3f1d$$dLTiHGg8MKPluz2vecWYi_2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS_cve0skfkkHJOqKgRlXolJ$$ArwJay91AEYeE6ZLzU9nx",
+    "source" : "all_type_non_partitioned_different_rows_1_7jyv4AsRAmZsckKqs3f1d$$dLTiHGg8MKPluz2vecWYi",
+    "sourcePort" : "output_port_3",
+    "target" : "2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS",
+    "targetPort" : "cve0skfkkHJOqKgRlXolJ$$ArwJay91AEYeE6ZLzU9nx"
+  }, {
+    "id" : "conn_S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1_rJfl_th-U5Dwv5SqxZ0EX$$EaDk4_EvAR9qlKckzAlrX_2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS_cCjnjmz_ahuVbn_87tE5q$$JGi8ous_botCtdlJrl1Fq",
+    "source" : "S9MB_annual_enterprise_survey_2023_financial_year_provisional_csv_1_rJfl_th-U5Dwv5SqxZ0EX$$EaDk4_EvAR9qlKckzAlrX",
+    "sourcePort" : "output_port_4",
+    "target" : "2wR0nDoRJ7ul8scmvEhXw$$6Y3FLv8djSkL1EVF2wbdS",
+    "targetPort" : "cCjnjmz_ahuVbn_87tE5q$$JGi8ous_botCtdlJrl1Fq"
+  }, {
+    "id" : "psWnJnW3Z1ESriGa1sMpq",
+    "source" : "cOgCCep-HupAjg79QRwuQ$$OwnnhuvIdFgN1wocOkwok",
+    "sourcePort" : "mIFfFodMJIDtC_Gg6OL_5$$37ac0kJKdokgL4qMBeeYv",
+    "target" : "5TMUjrrf_2d6VK73D9tM2$$wxRLk_VrHxqeOx10Wr5Em",
+    "targetPort" : "G-71iix0QJCcw9oG1JQfv$$zHYhc085PpgLYttzy0gdU"
+  }, {
+    "id" : "G6NaqzLBRY6ryhrHNeLaB",
+    "source" : "sTuOjMTlivWZAbtnGWihM$$R0gCxt2wdBf8e_uQ5qSS9",
+    "sourcePort" : "5vcVLLRPIHakoUQYf4kpK$$bgKOsgBc6WFlNau_tu5Pk",
+    "target" : "cOgCCep-HupAjg79QRwuQ$$OwnnhuvIdFgN1wocOkwok",
+    "targetPort" : "QpIQtFNLPKyJQaJu9JmUn$$R90dI_QX3JEAM6fgawKng"
+  }, {
+    "id" : "BWpkldN7K5v_VN5_TW3KM",
+    "source" : "TIrIctRXUVdv_rO2o2uVV$$ZKWk_1ZlemfDw_foJxfFq",
+    "sourcePort" : "6oF17cgJV9TytggY5xn6Y$$0BL7v1WuWMC3UgLEDfoUT",
+    "target" : "sTuOjMTlivWZAbtnGWihM$$R0gCxt2wdBf8e_uQ5qSS9",
+    "targetPort" : "P-Q9YWeJL5KtcBGKkDLGj$$6bldmi3_SgFMKh3OyEJDy"
+  }, {
+    "id" : "hpCm4URnuebqeYdU70Ufl",
+    "source" : "TIrIctRXUVdv_rO2o2uVV$$ZKWk_1ZlemfDw_foJxfFq",
+    "sourcePort" : "6oF17cgJV9TytggY5xn6Y$$0BL7v1WuWMC3UgLEDfoUT",
+    "target" : "sTuOjMTlivWZAbtnGWihM$$R0gCxt2wdBf8e_uQ5qSS9",
+    "targetPort" : "Cx0FCn99ylS8LLNXTBuJj$$i9QUpOP0yy-Jj0ith8vaz"
+  }, {
+    "id" : "e1RiSn5zrxhwGSPq-c2F5",
+    "source" : "YVVvDaLlzc-kKGfc_n4Na$$l1wI05NnqYOmlYhb_PuFI",
+    "sourcePort" : "wVQt-6I-kAXGCUsaIv2ke$$3cM8KXPVNy_t3LWfLaRit",
+    "target" : "TIrIctRXUVdv_rO2o2uVV$$ZKWk_1ZlemfDw_foJxfFq",
+    "targetPort" : "QSEBiAbmpneKu_xuZYBG4$$VK7T6YWs9S7nUMWdRjNdP"
+  }, {
+    "id" : "U6oNRcB6pi4JnE1QTZe1q",
+    "source" : "DPTc94ybD4GfxeYblcQgz$$bg_bJ-Ak5hAEE5QQ3A-re",
+    "sourcePort" : "nm5D_bWlaZ-j6g2fvvgf-$$s88uOomW5GEq9AX-Kr5UV",
+    "target" : "YVVvDaLlzc-kKGfc_n4Na$$l1wI05NnqYOmlYhb_PuFI",
+    "targetPort" : "lsKmY-LEahR-NBQQCHt25$$5v_m4FbRh2UfMe3tEo5Bu"
+  }, {
+    "id" : "zp43ZOz07dAvBLAd_sxcj",
+    "source" : "EqAMYi8DUVo9oXs5wrpA3$$VVcacFmzLWoHzzFbe3GZY",
+    "sourcePort" : "ELLR9NL98jH6ARHQQxtYO$$_09NV0m5qts8ozX3jy4nN",
+    "target" : "DPTc94ybD4GfxeYblcQgz$$bg_bJ-Ak5hAEE5QQ3A-re",
+    "targetPort" : "5s05szFPA29QjJyn1LkOp$$f07Lc1bPoIyykRdYZ3VJG"
+  }, {
+    "id" : "wMhzWQBLkaZc3Qi5eIbfn",
+    "source" : "ilwpH4nO25kYzjVuYlU51$$uWy43yh5lhxL4TQFDi4l_",
+    "sourcePort" : "qXSgmY4SGTm-ejoT3CE2M$$AGj0SyBayMa84u3993Y0U",
+    "target" : "EqAMYi8DUVo9oXs5wrpA3$$VVcacFmzLWoHzzFbe3GZY",
+    "targetPort" : "0H-TXtfj9VXJmhSZfnAfa$$vrKXBtq6G50GFlKEhm5a7"
+  }, {
+    "id" : "_AKwSXWwfOaTQp8kolHtB",
+    "source" : "js7y4C2hdlLl5O9Tr7rDy$$sNg-pXAm4qzQLEKCI8dSQ",
+    "sourcePort" : "iywwfpT5ifYAH6LNq986M$$osJHBMqNq1TVb1b-itcDu",
+    "target" : "ilwpH4nO25kYzjVuYlU51$$uWy43yh5lhxL4TQFDi4l_",
+    "targetPort" : "cwTUeHxKAQd7Z8T7uaj8l$$6v6c_s7zTq5qKtPAQxJLA"
+  } ],
+  "component" : "Model"
+}

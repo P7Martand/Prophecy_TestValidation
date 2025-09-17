@@ -1,0 +1,21 @@
+---
+version: 2
+models:
+- name: "parent_pipeline__Limit_2"
+  tags:
+  - "prophecy_temp"
+- name: "parent_pipeline__Reformat_1"
+  tags:
+  - "prophecy_temp"
+- name: "parent_pipeline__Reformat_3"
+  tags:
+  - "prophecy_temp"
+- name: "parent_pipeline__Reformat_4"
+  tags:
+  - "prophecy_temp"
+- name: "parent_pipeline__Reformat_5"
+  tags:
+  - "prophecy_temp"
+- name: "parent_pipeline__customer_data_with_details"
+  tags:
+  - "prophecy_temp"
