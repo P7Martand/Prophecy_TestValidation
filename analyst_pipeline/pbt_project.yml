@@ -43,6 +43,7 @@ sqlMacros:
     author: abhisheks+e2etests@prophecy.io
     files:
     - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-09-17 17:33:30'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/basic_seed:
@@ -59,7 +60,7 @@ sqlSeeds:
           type: String
       - name: c_boolean
         dataType:
-          type: Boolean
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -78,55 +79,7 @@ sqlSources:
       schema:
         entityType: ''
         providerType: databricks
-        fields:
-        - name: c_tinyint
-          dataType:
-            type: TinyInt
-        - name: c_smallint
-          dataType:
-            type: SmallInt
-        - name: c_int
-          dataType:
-            type: Integer
-        - name: c_bigint
-          dataType:
-            type: Bigint
-        - name: c_float
-          dataType:
-            type: Float
-        - name: c_double
-          dataType:
-            type: Double
-        - name: c_string
-          dataType:
-            type: String
-        - name: c_boolean
-          dataType:
-            type: Boolean
-        - name: c_array
-          dataType:
-            type: Array
-            dataType:
-              type: String
-        - name: c_struct
-          dataType:
-            type: Struct
-            fields:
-            - name: city
-              dataType:
-                type: String
-            - name: state
-              dataType:
-                type: String
-            - name: pin
-              dataType:
-                type: Bigint
-        - name: p_int
-          dataType:
-            type: Integer
-        - name: p_string
-          dataType:
-            type: String
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2025-09-17 18:01:30'
@@ -135,58 +88,7 @@ sqlSources:
       schema:
         entityType: ''
         providerType: databricks
-        fields:
-        - name: c_tinyint
-          dataType:
-            type: TinyInt
-        - name: c_smallint
-          dataType:
-            type: SmallInt
-        - name: c_int
-          dataType:
-            type: Integer
-        - name: c_bigint
-          dataType:
-            type: Bigint
-        - name: c_float
-          dataType:
-            type: Float
-        - name: c_double
-          dataType:
-            type: Double
-        - name: c_string
-          dataType:
-            type: String
-        - name: c_boolean
-          dataType:
-            type: Boolean
-        - name: c_array
-          dataType:
-            type: Array
-            dataType:
-              type: String
-        - name: c_struct
-          dataType:
-            type: Struct
-            fields:
-            - name: city
-              dataType:
-                type: String
-            - name: state
-              dataType:
-                type: String
-            - name: pin
-              dataType:
-                type: Bigint
-        - name: p_int
-          dataType:
-            type: Integer
-        - name: p_string
-          dataType:
-            type: String
-        - name: c_parameter_string
-          dataType:
-            type: String
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2025-09-17 18:07:03'
@@ -210,12 +112,12 @@ sqlOrchestratorPipelines:
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - models/parent_pipeline/schema.yml
-    - models/parent_pipeline/parent_pipeline__Reformat_5.sql
     - models/parent_pipeline/parent_pipeline__Reformat_1.sql
+    - models/parent_pipeline/parent_pipeline__Reformat_4.sql
     - models/parent_pipeline/parent_pipeline__Reformat_3.sql
     - models/parent_pipeline/parent_pipeline__customer_data_with_details.sql
-    - models/parent_pipeline/parent_pipeline__Reformat_4.sql
+    - models/parent_pipeline/schema.yml
+    - models/parent_pipeline/parent_pipeline__Reformat_5.sql
     - models/parent_pipeline/parent_pipeline__Limit_2.sql
     - .prophecy/ide/pipelines/parent_pipeline.json
     - pipelines/parent_pipeline.py
