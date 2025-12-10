@@ -2,5 +2,15 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    customers_0 = Task(task_id = "customers_0", component = "Model", modelName = "customers")
-    orders_1 = Task(task_id = "orders_1", component = "Model", modelName = "orders")
+    raw_orders = Task(
+        task_id = "raw_orders", 
+        component = "Dataset", 
+        writeOptions = {"writeMode" : "overwrite"}, 
+        table = {"name" : "raw_orders", "sourceType" : "Seed", "alias" : ""}
+    )
+    raw_customers = Task(
+        task_id = "raw_customers", 
+        component = "Dataset", 
+        writeOptions = {"writeMode" : "overwrite"}, 
+        table = {"name" : "raw_customers", "sourceType" : "Seed", "alias" : ""}
+    )
