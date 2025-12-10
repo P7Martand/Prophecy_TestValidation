@@ -1,0 +1,228 @@
+{
+  "id" : "stg_customers",
+  "metainfo" : {
+    "label" : "stg_customers",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "source##uo6BzVCa" : {
+      "id" : "source##uo6BzVCa",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "source",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "comment" : "-\n    Normally we would select from the table here, but we are using seeds to load\n    our data in this project\n    "
+      },
+      "properties" : {
+        "table" : {
+          "name" : "raw_customers",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "fMKEHMdW",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "renamed##bwCzxFyc" : {
+      "id" : "renamed##bwCzxFyc",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "renamed",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ "GGVzKDtR##id", "GGVzKDtR##first_name", "GGVzKDtR##last_name" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "id"
+          },
+          "alias" : "customer_id"
+        }, {
+          "expression" : {
+            "expression" : "first_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "last_name"
+          }
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GGVzKDtR",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "source"
+        } ],
+        "outputs" : [ {
+          "id" : "WKPQGmh9",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "stg_customers##t1q0Y2QJ" : {
+      "id" : "stg_customers##t1q0Y2QJ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "stg_customers",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM renamed\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "u6TwSvcr",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "renamed"
+        } ],
+        "outputs" : [ {
+          "id" : "DJFOffT8",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "qKabJTeP",
+    "source" : "source##uo6BzVCa",
+    "sourcePort" : "fMKEHMdW",
+    "target" : "renamed##bwCzxFyc",
+    "targetPort" : "GGVzKDtR"
+  }, {
+    "id" : "XjIeELnN",
+    "source" : "renamed##bwCzxFyc",
+    "sourcePort" : "WKPQGmh9",
+    "target" : "stg_customers##t1q0Y2QJ",
+    "targetPort" : "u6TwSvcr"
+  } ],
+  "component" : "Model"
+}
