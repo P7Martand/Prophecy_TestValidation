@@ -120,11 +120,11 @@
         "isCustomOutputSchema" : false
       }
     },
-    "zmkDG9-SPhoAvkCwkX8XR" : {
-      "id" : "zmkDG9-SPhoAvkCwkX8XR",
+    "Bji30gQkuneF7OwyQoGyA" : {
+      "id" : "Bji30gQkuneF7OwyQoGyA",
       "component" : "Dataset",
       "metadata" : {
-        "label" : "raw_orders",
+        "label" : "raw_customers",
         "x" : -540,
         "y" : -300,
         "phase" : 0
@@ -134,7 +134,7 @@
           "writeMode" : "overwrite"
         },
         "table" : {
-          "name" : "raw_orders",
+          "name" : "raw_customers",
           "sourceType" : "Seed",
           "alias" : ""
         }
@@ -142,7 +142,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "1Ibm8bx7OzeIOM34qBTKD",
+          "id" : "10VuY4izqlZ1Mjp0Kd7fQ",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -156,9 +156,9 @@
     "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
     "targetPort" : "YgkupRFpnVrdMLTNLVCCY$$hymWE9Rk4LVx-peTSZ9o9"
   }, {
-    "id" : "ro6WyG-zx90okr6CghzwC$$yMgq2KbtIAwU9qncBfQ37",
-    "source" : "zmkDG9-SPhoAvkCwkX8XR",
-    "sourcePort" : "1Ibm8bx7OzeIOM34qBTKD",
+    "id" : "Kebu9DwxUNF6rNRZuwJYC$$VDT-_Lmh7cd6be0KjKeuC",
+    "source" : "Bji30gQkuneF7OwyQoGyA",
+    "sourcePort" : "10VuY4izqlZ1Mjp0Kd7fQ",
     "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
     "targetPort" : "HN_6k7YSuP8NTJm8EHtYc$$9xG6bMq1eLetF9_O8qGc_"
   } ],
