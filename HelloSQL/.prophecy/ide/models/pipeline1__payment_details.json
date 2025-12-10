@@ -137,6 +137,35 @@
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
+    },
+    "zmkDG9-SPhoAvkCwkX8XR" : {
+      "id" : "zmkDG9-SPhoAvkCwkX8XR",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "raw_orders",
+        "x" : -540,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_orders",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "1Ibm8bx7OzeIOM34qBTKD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     }
   },
   "connections" : [ {
@@ -151,6 +180,12 @@
     "sourcePort" : "8XU50RBlyY3qUeX41eETs$$zI0UKSK9tSjo_wekzNZ2I",
     "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
     "targetPort" : "YgkupRFpnVrdMLTNLVCCY$$hymWE9Rk4LVx-peTSZ9o9"
+  }, {
+    "id" : "ro6WyG-zx90okr6CghzwC$$yMgq2KbtIAwU9qncBfQ37",
+    "source" : "zmkDG9-SPhoAvkCwkX8XR",
+    "sourcePort" : "1Ibm8bx7OzeIOM34qBTKD",
+    "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
+    "targetPort" : "HN_6k7YSuP8NTJm8EHtYc$$9xG6bMq1eLetF9_O8qGc_"
   } ],
   "component" : "Model"
 }

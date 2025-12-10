@@ -57,6 +57,34 @@
         "isCustomOutputSchema" : false
       }
     },
+    "zmkDG9-SPhoAvkCwkX8XR" : {
+      "id" : "zmkDG9-SPhoAvkCwkX8XR",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "raw_orders",
+        "x" : -540,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_orders",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "1Ibm8bx7OzeIOM34qBTKD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g" : {
       "id" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
       "component" : "Model",
@@ -68,7 +96,7 @@
         "modelName" : "pipeline1__payment_details"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF", "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g", "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw" ],
+        "visualProcessIds" : [ "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF", "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g", "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw", "zmkDG9-SPhoAvkCwkX8XR" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
@@ -76,6 +104,9 @@
         "inputs" : [ {
           "id" : "pipeline1__payment_details_in_0",
           "slug" : "in_0"
+        }, {
+          "id" : "pipeline1__payment_details_in_1",
+          "slug" : "in_1"
         } ],
         "outputs" : [ {
           "id" : "pipeline1__payment_details_out_0",
@@ -91,6 +122,12 @@
     "sourcePort" : "8XU50RBlyY3qUeX41eETs$$zI0UKSK9tSjo_wekzNZ2I",
     "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
     "targetPort" : "pipeline1__payment_details_in_0"
+  }, {
+    "id" : "ro6WyG-zx90okr6CghzwC$$yMgq2KbtIAwU9qncBfQ37",
+    "source" : "zmkDG9-SPhoAvkCwkX8XR",
+    "sourcePort" : "1Ibm8bx7OzeIOM34qBTKD",
+    "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
+    "targetPort" : "pipeline1__payment_details_in_1"
   } ],
   "component" : "Pipeline"
 }

@@ -14,6 +14,14 @@ WITH raw_payments AS (
 
 ),
 
+raw_orders AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_orders')}}
+
+),
+
 payment_details AS (
 
   {#Compiles payment details by merging raw and staged payment data.#}
@@ -24,7 +32,7 @@ payment_details AS (
     in0.amount AS amount
   
   FROM raw_payments AS in0
-  INNER JOIN `` AS in1
+  INNER JOIN raw_orders AS in1
      ON true
 
 )
