@@ -57,29 +57,6 @@
         "isCustomOutputSchema" : false
       }
     },
-    "aJindZtFHEAweBr7hu9Lq$$Cwx26J8bfMOEvgzYsXTh4" : {
-      "id" : "aJindZtFHEAweBr7hu9Lq$$Cwx26J8bfMOEvgzYsXTh4",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "stg_payments_1",
-        "x" : -640,
-        "y" : -200
-      },
-      "properties" : {
-        "modelName" : "stg_payments"
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "eZmDepYPZNSlhLQ6dDrE8$$cJp5lDCXOWvByaixSft2K",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "1t6h2yjyBZCyi4kKfbR_R$$UsAmZgk638S-n2iKmrxV4",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g" : {
       "id" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
       "component" : "Join",
@@ -142,20 +119,48 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "Bji30gQkuneF7OwyQoGyA" : {
+      "id" : "Bji30gQkuneF7OwyQoGyA",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "raw_customers",
+        "x" : -540,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_customers",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "10VuY4izqlZ1Mjp0Kd7fQ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
-    "id" : "UQUY1Ircyd7c6iEFbCEOh",
-    "source" : "aJindZtFHEAweBr7hu9Lq$$Cwx26J8bfMOEvgzYsXTh4",
-    "sourcePort" : "1t6h2yjyBZCyi4kKfbR_R$$UsAmZgk638S-n2iKmrxV4",
-    "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
-    "targetPort" : "HN_6k7YSuP8NTJm8EHtYc$$9xG6bMq1eLetF9_O8qGc_"
-  }, {
     "id" : "uHQo28ZRoNG4cbcS1aN4z",
     "source" : "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw",
     "sourcePort" : "8XU50RBlyY3qUeX41eETs$$zI0UKSK9tSjo_wekzNZ2I",
     "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
     "targetPort" : "YgkupRFpnVrdMLTNLVCCY$$hymWE9Rk4LVx-peTSZ9o9"
+  }, {
+    "id" : "Kebu9DwxUNF6rNRZuwJYC$$VDT-_Lmh7cd6be0KjKeuC",
+    "source" : "Bji30gQkuneF7OwyQoGyA",
+    "sourcePort" : "10VuY4izqlZ1Mjp0Kd7fQ",
+    "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
+    "targetPort" : "HN_6k7YSuP8NTJm8EHtYc$$9xG6bMq1eLetF9_O8qGc_"
   } ],
   "component" : "Pipeline"
 }

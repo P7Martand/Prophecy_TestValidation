@@ -8,11 +8,16 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "raw_payments", "sourceType" : "Seed"}
     )
-    stg_payments_1 = Task(task_id = "stg_payments_1", component = "Model", modelName = "stg_payments")
+    raw_customers = Task(
+        task_id = "raw_customers", 
+        component = "Dataset", 
+        writeOptions = {"writeMode" : "overwrite"}, 
+        table = {"name" : "raw_customers", "sourceType" : "Seed", "alias" : ""}
+    )
     pipeline1__payment_details = Task(
         task_id = "pipeline1__payment_details", 
         component = "Model", 
         modelName = "pipeline1__payment_details"
     )
-    stg_payments_1.out >> pipeline1__payment_details.in_0
-    raw_payments.out >> pipeline1__payment_details.in_1
+    raw_payments.out >> pipeline1__payment_details.in_0
+    raw_customers.out >> pipeline1__payment_details.in_1

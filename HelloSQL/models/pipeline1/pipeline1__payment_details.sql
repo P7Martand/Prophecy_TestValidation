@@ -6,19 +6,19 @@
   })
 }}
 
-WITH stg_payments_1 AS (
-
-  SELECT * 
-  
-  FROM {{ ref('stg_payments')}}
-
-),
-
-raw_payments AS (
+WITH raw_payments AS (
 
   SELECT * 
   
   FROM {{ ref('raw_payments')}}
+
+),
+
+raw_customers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_customers')}}
 
 ),
 
@@ -32,7 +32,7 @@ payment_details AS (
     in0.amount AS amount
   
   FROM raw_payments AS in0
-  INNER JOIN stg_payments_1 AS in1
+  INNER JOIN raw_customers AS in1
      ON true
 
 )
