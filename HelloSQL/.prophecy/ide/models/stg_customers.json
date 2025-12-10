@@ -35,25 +35,6 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "fMKEHMdW",
-          "schema" : {
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "first_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "last_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -68,7 +49,9 @@
         "x" : 220,
         "y" : 20,
         "phase" : 0,
-        "macroDependencies" : [ ]
+        "macroDependencies" : [ ],
+        "comment" : "Standardizes customer data by renaming fields for consistency.",
+        "autoUpdateComment" : true
       },
       "properties" : {
         "columnsSelector" : [ "GGVzKDtR##id", "GGVzKDtR##first_name", "GGVzKDtR##last_name" ],
@@ -76,62 +59,29 @@
           "expression" : {
             "expression" : "id"
           },
-          "alias" : "customer_id"
+          "alias" : "customer_id",
+          "_row_id" : "1167890104"
         }, {
           "expression" : {
             "expression" : "first_name"
-          }
+          },
+          "alias" : "First",
+          "_row_id" : "1426644335"
         }, {
           "expression" : {
             "expression" : "last_name"
-          }
+          },
+          "alias" : "Last",
+          "_row_id" : "1629958148"
         } ]
       },
       "ports" : {
         "inputs" : [ {
           "id" : "GGVzKDtR",
-          "schema" : {
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "first_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "last_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "source"
         } ],
         "outputs" : [ {
           "id" : "WKPQGmh9",
-          "schema" : {
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "first_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "last_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -162,48 +112,10 @@
       "ports" : {
         "inputs" : [ {
           "id" : "u6TwSvcr",
-          "schema" : {
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "first_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "last_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "renamed"
         } ],
         "outputs" : [ {
           "id" : "DJFOffT8",
-          "schema" : {
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "first_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "last_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

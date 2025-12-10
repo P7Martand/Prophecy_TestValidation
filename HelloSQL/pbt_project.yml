@@ -183,10 +183,10 @@ sqlModels:
       - name: customer_id
         dataType:
           type: Integer
-      - name: first_name
+      - name: First
         dataType:
           type: String
-      - name: last_name
+      - name: Last
         dataType:
           type: String
     description: null

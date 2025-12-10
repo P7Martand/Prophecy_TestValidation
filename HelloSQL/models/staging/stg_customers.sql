@@ -12,10 +12,11 @@ WITH source AS (
 
 renamed AS (
 
+  {#Standardizes customer data by renaming fields for consistency.#}
   SELECT 
     id AS customer_id,
-    first_name,
-    last_name
+    first_name AS First,
+    last_name AS Last
   
   FROM source
 
