@@ -9,5 +9,3 @@
 {% endif %} 
 {{ return(table_name) }}
 {% endmacro %}
-
- 
