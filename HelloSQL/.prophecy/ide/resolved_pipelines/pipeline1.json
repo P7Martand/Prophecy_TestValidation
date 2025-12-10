@@ -14,65 +14,6 @@
     "publishDiagnosticMetrics" : false
   },
   "processes" : {
-    "user_order_aggre##URQ1LHdi" : {
-      "id" : "user_order_aggre##URQ1LHdi",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "pipeline1__user_order_aggregate",
-        "phase" : 0
-      },
-      "properties" : {
-        "modelName" : "pipeline1__user_order_aggregate"
-      },
-      "visualMetaInfo" : {
-        "visualProcessIds" : [ "user_order_aggregate_hNaIzg8F", "user_order_aggre##URQ1LHdi", "orders_customers##SbUfUoWG", "raw_orders##gCHIo102", "raw_customers##NaJ3kAmt" ],
-        "type" : "ephemeral",
-        "isTemporaryTable" : true
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "pipeline1__user_order_aggregate_in_0",
-          "slug" : "in_0"
-        }, {
-          "id" : "pipeline1__user_order_aggregate_in_1",
-          "slug" : "in_1"
-        } ],
-        "outputs" : [ {
-          "id" : "pipeline1__user_order_aggregate_out_0",
-          "slug" : "out_0"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "raw_customers##NaJ3kAmt" : {
-      "id" : "raw_customers##NaJ3kAmt",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "raw_customers",
-        "x" : -700,
-        "y" : -140,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "raw_customers",
-          "sourceType" : "Seed",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "DbvEHTHt",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      },
-      "index" : 0
-    },
     "season_years##WNatlOS1" : {
       "id" : "season_years##WNatlOS1",
       "component" : "Model",
@@ -102,49 +43,8 @@
         } ],
         "isCustomOutputSchema" : false
       }
-    },
-    "raw_orders##gCHIo102" : {
-      "id" : "raw_orders##gCHIo102",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "raw_orders",
-        "x" : -700,
-        "y" : -280,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "raw_orders",
-          "sourceType" : "Seed",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "dVSJJtrg",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      },
-      "index" : 1
     }
   },
-  "connections" : [ {
-    "id" : "ONeE8CTd",
-    "source" : "raw_orders##gCHIo102",
-    "sourcePort" : "dVSJJtrg",
-    "target" : "user_order_aggre##URQ1LHdi",
-    "targetPort" : "pipeline1__user_order_aggregate_in_0"
-  }, {
-    "id" : "oxV5BuBZ",
-    "source" : "raw_customers##NaJ3kAmt",
-    "sourcePort" : "DbvEHTHt",
-    "target" : "user_order_aggre##URQ1LHdi",
-    "targetPort" : "pipeline1__user_order_aggregate_in_1"
-  } ],
+  "connections" : [ ],
   "component" : "Pipeline"
 }

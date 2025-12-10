@@ -4,6 +4,3 @@ models:
 - name: "pipeline1__season_years"
   tags:
   - "prophecy_temp"
-- name: "pipeline1__user_order_aggregate"
-  tags:
-  - "prophecy_temp"

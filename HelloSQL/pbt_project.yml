@@ -398,7 +398,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/pipeline1.json
     - pipelines/pipeline1.py
     - models/pipeline1/schema.yml
-    - models/pipeline1/pipeline1__user_order_aggregate.sql
     - models/pipeline1/pipeline1__season_years.sql
     createdAt: '2025-12-10 14:16:14'
 sqlBusinessApps: {}
