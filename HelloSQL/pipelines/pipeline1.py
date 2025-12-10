@@ -1,20 +1,20 @@
 with DAG():
-    raw_orders = Task(
-        task_id = "raw_orders", 
-        component = "Dataset", 
-        writeOptions = {"writeMode" : "overwrite"}, 
-        table = {"name" : "raw_orders", "sourceType" : "Seed", "alias" : ""}
-    )
     raw_customers = Task(
         task_id = "raw_customers", 
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "raw_customers", "sourceType" : "Seed", "alias" : ""}
     )
-    pipeline1__orders_customers_join = Task(
-        task_id = "pipeline1__orders_customers_join", 
+    pipeline1__user_order_aggregate = Task(
+        task_id = "pipeline1__user_order_aggregate", 
         component = "Model", 
-        modelName = "pipeline1__orders_customers_join"
+        modelName = "pipeline1__user_order_aggregate"
     )
-    raw_orders.out >> pipeline1__orders_customers_join.in_0
-    raw_customers.out >> pipeline1__orders_customers_join.in_1
+    raw_orders = Task(
+        task_id = "raw_orders", 
+        component = "Dataset", 
+        writeOptions = {"writeMode" : "overwrite"}, 
+        table = {"name" : "raw_orders", "sourceType" : "Seed", "alias" : ""}
+    )
+    raw_orders.out >> pipeline1__user_order_aggregate.in_0
+    raw_customers.out >> pipeline1__user_order_aggregate.in_1

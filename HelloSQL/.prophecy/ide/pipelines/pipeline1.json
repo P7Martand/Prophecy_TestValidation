@@ -14,36 +14,8 @@
     "publishDiagnosticMetrics" : false
   },
   "processes" : {
-    "7gEwb8KjK8DNH8VQbm0j-" : {
-      "id" : "7gEwb8KjK8DNH8VQbm0j-",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "raw_orders",
-        "x" : -700,
-        "y" : -280,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "raw_orders",
-          "sourceType" : "Seed",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "NeQWtzkL",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "raw_customers##a8U8xyWh" : {
-      "id" : "raw_customers##a8U8xyWh",
+    "raw_customers##ItzdaNi5" : {
+      "id" : "raw_customers##ItzdaNi5",
       "component" : "Dataset",
       "metadata" : {
         "label" : "raw_customers",
@@ -64,7 +36,36 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "S9NZE1eK",
+          "id" : "dYgYj93s",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 0
+    },
+    "raw_orders##KjVf6dxa" : {
+      "id" : "raw_orders##KjVf6dxa",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "raw_orders",
+        "x" : -700,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_orders",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ytG3TnZO",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -93,43 +94,43 @@
             "expression" : "raw_orders.id"
           },
           "alias" : "ORDER_ID",
-          "_row_id" : "1605471548"
+          "_row_id" : "1614573115"
         }, {
           "expression" : {
             "expression" : "raw_orders.user_id"
           },
           "alias" : "USER_ID",
-          "_row_id" : "1702216555"
+          "_row_id" : "1315431212"
         }, {
           "expression" : {
             "expression" : "raw_orders.order_date"
           },
           "alias" : "ORDER_DATE",
-          "_row_id" : "1667336052"
+          "_row_id" : "1582125920"
         }, {
           "expression" : {
             "expression" : "raw_orders.status"
           },
           "alias" : "STATUS",
-          "_row_id" : "2122312358"
+          "_row_id" : "1514090630"
         }, {
           "expression" : {
             "expression" : "raw_customers.id"
           },
           "alias" : "CUSTOMER_ID",
-          "_row_id" : "1912455903"
+          "_row_id" : "2998786"
         }, {
           "expression" : {
             "expression" : "raw_customers.first_name"
           },
           "alias" : "FIRST_NAME",
-          "_row_id" : "1546391547"
+          "_row_id" : "492767242"
         }, {
           "expression" : {
             "expression" : "raw_customers.last_name"
           },
           "alias" : "LAST_NAME",
-          "_row_id" : "514404942"
+          "_row_id" : "1745287401"
         } ],
         "activeTab" : "conditions",
         "columnsSelector" : [ ],
@@ -137,14 +138,81 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "QVJvWDP8",
+          "id" : "lwGBoKzJ",
           "slug" : "raw_orders"
         }, {
-          "id" : "QyNUCHJx",
+          "id" : "HbUZxEBo",
           "slug" : "raw_customers"
         } ],
         "outputs" : [ {
-          "id" : "qbccllJ5",
+          "id" : "zJdWB9ip",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "user_order_aggre##URQ1LHdi" : {
+      "id" : "user_order_aggre##URQ1LHdi",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "user_order_aggregate",
+        "x" : -300,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "USER_ID"
+          },
+          "_row_id" : "727399995"
+        }, {
+          "expression" : {
+            "expression" : "FIRST_NAME"
+          },
+          "_row_id" : "1946618590"
+        }, {
+          "expression" : {
+            "expression" : "LAST_NAME"
+          },
+          "_row_id" : "545246220"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(ORDER_ID)"
+          },
+          "alias" : "TOTAL_ORDERS",
+          "_row_id" : "274419178"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "USER_ID"
+          },
+          "_row_id" : "462236788"
+        }, {
+          "expression" : {
+            "expression" : "FIRST_NAME"
+          },
+          "_row_id" : "153652952"
+        }, {
+          "expression" : {
+            "expression" : "LAST_NAME"
+          },
+          "_row_id" : "1476565987"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "s0cLm1EZ",
+          "slug" : "orders_customers_join"
+        } ],
+        "outputs" : [ {
+          "id" : "IJ009Gxh",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -152,17 +220,23 @@
     }
   },
   "connections" : [ {
-    "id" : "E8EO7enF",
-    "source" : "7gEwb8KjK8DNH8VQbm0j-",
-    "sourcePort" : "NeQWtzkL",
+    "id" : "HY1Zun5M",
+    "source" : "raw_orders##KjVf6dxa",
+    "sourcePort" : "ytG3TnZO",
     "target" : "orders_customers##CWUu2WJP",
-    "targetPort" : "QVJvWDP8"
+    "targetPort" : "lwGBoKzJ"
   }, {
-    "id" : "JS6HSRp4",
-    "source" : "raw_customers##a8U8xyWh",
-    "sourcePort" : "S9NZE1eK",
+    "id" : "QCDoEpWw",
+    "source" : "raw_customers##ItzdaNi5",
+    "sourcePort" : "dYgYj93s",
     "target" : "orders_customers##CWUu2WJP",
-    "targetPort" : "QyNUCHJx"
+    "targetPort" : "HbUZxEBo"
+  }, {
+    "id" : "fc6R51JQ",
+    "source" : "orders_customers##CWUu2WJP",
+    "sourcePort" : "zJdWB9ip",
+    "target" : "user_order_aggre##URQ1LHdi",
+    "targetPort" : "s0cLm1EZ"
   } ],
   "component" : "Pipeline"
 }

@@ -6,19 +6,19 @@
   })
 }}
 
-WITH raw_orders AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_orders')}}
-
-),
-
-raw_customers AS (
+WITH raw_customers AS (
 
   SELECT * 
   
   FROM {{ ref('raw_customers')}}
+
+),
+
+raw_orders AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_orders')}}
 
 ),
 
@@ -37,8 +37,23 @@ orders_customers_join AS (
   INNER JOIN raw_customers
      ON raw_orders.user_id = raw_customers.id
 
+),
+
+user_order_aggregate AS (
+
+  SELECT 
+    USER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    COUNT(ORDER_ID) AS TOTAL_ORDERS
+  
+  FROM orders_customers_join
+  
+  GROUP BY 
+    USER_ID, FIRST_NAME, LAST_NAME
+
 )
 
 SELECT *
 
-FROM orders_customers_join
+FROM user_order_aggregate
