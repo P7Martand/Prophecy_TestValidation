@@ -6,9 +6,6 @@ sources:
   schema: "prakhar"
   tables:
   - name: "aus_team"
-    config:
-      tags:
-      - "pipeline:pipeline1"
     columns:
     - name: "id"
       dataType:

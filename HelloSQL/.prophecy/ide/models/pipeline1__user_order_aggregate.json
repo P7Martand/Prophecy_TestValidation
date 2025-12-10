@@ -79,7 +79,7 @@
           "_row_id" : "2014358411"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "hcnjXqKn##user_id", "Q3PGTypa##id", "hcnjXqKn##id", "hcnjXqKn##user_id", "hcnjXqKn##order_date", "hcnjXqKn##status", "Q3PGTypa##id", "Q3PGTypa##first_name", "Q3PGTypa##last_name" ],
         "headAlias" : "raw_orders"
       },
       "ports" : {
@@ -135,7 +135,7 @@
           "expression" : ""
         },
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "WGAV3Qpa##USER_ID", "WGAV3Qpa##FIRST_NAME", "WGAV3Qpa##LAST_NAME", "WGAV3Qpa##ORDER_ID" ],
         "groupBy" : [ {
           "expression" : {
             "expression" : "USER_ID"

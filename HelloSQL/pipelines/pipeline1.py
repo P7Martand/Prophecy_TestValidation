@@ -15,12 +15,6 @@ with DAG():
         component = "Model", 
         modelName = "pipeline1__season_years"
     )
-    aus_team = Task(
-        task_id = "aus_team", 
-        component = "Dataset", 
-        writeOptions = {"writeMode" : "overwrite"}, 
-        table = {"name" : "aus_team", "sourceName" : "qa_team_prakhar", "sourceType" : "Table"}
-    )
     raw_orders = Task(
         task_id = "raw_orders", 
         component = "Dataset", 

@@ -103,35 +103,6 @@
         "isCustomOutputSchema" : false
       }
     },
-    "aus_team##DWPnJG2G" : {
-      "id" : "aus_team##DWPnJG2G",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "aus_team",
-        "x" : -680,
-        "y" : 340,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "aus_team",
-          "sourceName" : "qa_team_prakhar",
-          "sourceType" : "Table"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "XfOzAyVk",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      },
-      "index" : 5
-    },
     "raw_orders##gCHIo102" : {
       "id" : "raw_orders##gCHIo102",
       "component" : "Dataset",
