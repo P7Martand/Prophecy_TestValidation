@@ -57,29 +57,6 @@
         "isCustomOutputSchema" : false
       }
     },
-    "aJindZtFHEAweBr7hu9Lq$$Cwx26J8bfMOEvgzYsXTh4" : {
-      "id" : "aJindZtFHEAweBr7hu9Lq$$Cwx26J8bfMOEvgzYsXTh4",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "stg_payments_1",
-        "x" : -640,
-        "y" : -200
-      },
-      "properties" : {
-        "modelName" : "stg_payments"
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "eZmDepYPZNSlhLQ6dDrE8$$cJp5lDCXOWvByaixSft2K",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "1t6h2yjyBZCyi4kKfbR_R$$UsAmZgk638S-n2iKmrxV4",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g" : {
       "id" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
       "component" : "Model",
@@ -91,7 +68,7 @@
         "modelName" : "pipeline1__payment_details"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF", "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g", "aJindZtFHEAweBr7hu9Lq$$Cwx26J8bfMOEvgzYsXTh4", "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw" ],
+        "visualProcessIds" : [ "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF", "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g", "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
@@ -99,9 +76,6 @@
         "inputs" : [ {
           "id" : "pipeline1__payment_details_in_0",
           "slug" : "in_0"
-        }, {
-          "id" : "pipeline1__payment_details_in_1",
-          "slug" : "in_1"
         } ],
         "outputs" : [ {
           "id" : "pipeline1__payment_details_out_0",
@@ -112,17 +86,11 @@
     }
   },
   "connections" : [ {
-    "id" : "UQUY1Ircyd7c6iEFbCEOh",
-    "source" : "aJindZtFHEAweBr7hu9Lq$$Cwx26J8bfMOEvgzYsXTh4",
-    "sourcePort" : "1t6h2yjyBZCyi4kKfbR_R$$UsAmZgk638S-n2iKmrxV4",
-    "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
-    "targetPort" : "pipeline1__payment_details_in_0"
-  }, {
     "id" : "uHQo28ZRoNG4cbcS1aN4z",
     "source" : "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw",
     "sourcePort" : "8XU50RBlyY3qUeX41eETs$$zI0UKSK9tSjo_wekzNZ2I",
     "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
-    "targetPort" : "pipeline1__payment_details_in_1"
+    "targetPort" : "pipeline1__payment_details_in_0"
   } ],
   "component" : "Pipeline"
 }
