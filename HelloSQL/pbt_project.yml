@@ -308,21 +308,6 @@ sqlSources:
         - name: id
           dataType:
             type: Bigint
-        - name: player_name
-          dataType:
-            type: String
-        - name: total_matches
-          dataType:
-            type: Bigint
-        - name: total_scores
-          dataType:
-            type: Bigint
-        - name: category
-          dataType:
-            type: String
-        - name: total_wickets
-          dataType:
-            type: Bigint
         - name: best_wicket_performance
           dataType:
             type: String
