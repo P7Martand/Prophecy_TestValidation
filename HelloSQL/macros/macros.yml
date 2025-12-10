@@ -1,0 +1,8 @@
+---
+version: 2
+macros:
+- name: "justgem"
+  arguments:
+  - name: "parameter1"
+    type: "value"
+  macroType: "query"

@@ -223,6 +223,17 @@ sqlMacros:
     - macros/prophecy_tmp_source.sql
     - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-12-10 12:30:05'
+  .prophecy/metadata/sqlmacros/justgem:
+    name: justgem
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/justgem.sql
+    - .prophecy/ide/macros/justgem.json
+    - macros/macros.yml
+    - gems/justgem.py
+    createdAt: '2025-12-10 16:11:35'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/raw_customers:
     name: raw_customers
