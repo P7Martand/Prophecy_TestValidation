@@ -14,104 +14,61 @@
     "publishDiagnosticMetrics" : false
   },
   "processes" : {
-    "raw_customers##ItzdaNi5" : {
-      "id" : "raw_customers##ItzdaNi5",
-      "component" : "Dataset",
+    "season_scores_wi##PEVyscNq" : {
+      "id" : "season_scores_wi##PEVyscNq",
+      "component" : "Join",
       "metadata" : {
-        "label" : "raw_customers",
-        "x" : -700,
-        "y" : -140,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "raw_customers",
-          "sourceType" : "Seed",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "dYgYj93s",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      },
-      "index" : 0
-    },
-    "user_order_aggre##URQ1LHdi" : {
-      "id" : "user_order_aggre##URQ1LHdi",
-      "component" : "Aggregate",
-      "metadata" : {
-        "label" : "user_order_aggregate",
+        "label" : "season_scores_with_max",
         "x" : -300,
-        "y" : -200,
+        "y" : 140,
         "phase" : 0
       },
       "properties" : {
-        "aggregate" : [ {
+        "conditions" : [ {
+          "alias" : "max_home_team_score",
           "expression" : {
-            "expression" : "USER_ID"
+            "expression" : "TRUE"
           },
-          "_row_id" : "727399995"
-        }, {
-          "expression" : {
-            "expression" : "FIRST_NAME"
-          },
-          "_row_id" : "1946618590"
-        }, {
-          "expression" : {
-            "expression" : "LAST_NAME"
-          },
-          "_row_id" : "545246220"
-        }, {
-          "expression" : {
-            "expression" : "COUNT(ORDER_ID)"
-          },
-          "alias" : "TOTAL_ORDERS",
-          "_row_id" : "274419178"
+          "joinType" : "LEFT"
         } ],
-        "allowSelection" : true,
-        "condition" : {
-          "expression" : ""
-        },
-        "activeTab" : "aggregate",
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "nba_games_season_scores.season_year"
+          },
+          "_row_id" : "1660569065"
+        }, {
+          "expression" : {
+            "expression" : "nba_games_season_scores.home_team_score"
+          },
+          "_row_id" : "1632526400"
+        }, {
+          "expression" : {
+            "expression" : "max_home_team_score.MAX_home_team_score_"
+          },
+          "alias" : "MAX_home_team_score_",
+          "_row_id" : "168416964"
+        } ],
+        "activeTab" : "conditions",
         "columnsSelector" : [ ],
-        "groupBy" : [ {
-          "expression" : {
-            "expression" : "USER_ID"
-          },
-          "_row_id" : "462236788"
-        }, {
-          "expression" : {
-            "expression" : "FIRST_NAME"
-          },
-          "_row_id" : "153652952"
-        }, {
-          "expression" : {
-            "expression" : "LAST_NAME"
-          },
-          "_row_id" : "1476565987"
-        } ]
+        "headAlias" : "nba_games_season_scores"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "s0cLm1EZ",
-          "slug" : "orders_customers_join"
+          "id" : "RV4dTqWe",
+          "slug" : "nba_games_season_scores"
+        }, {
+          "id" : "QuQJkWCq",
+          "slug" : "max_home_team_score"
         } ],
         "outputs" : [ {
-          "id" : "IJ009Gxh",
+          "id" : "Q9Q8JW9g",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       }
     },
-    "orders_customers##CWUu2WJP" : {
-      "id" : "orders_customers##CWUu2WJP",
+    "orders_customers##SbUfUoWG" : {
+      "id" : "orders_customers##SbUfUoWG",
       "component" : "Join",
       "metadata" : {
         "label" : "orders_customers_join",
@@ -132,43 +89,43 @@
             "expression" : "raw_orders.id"
           },
           "alias" : "ORDER_ID",
-          "_row_id" : "1614573115"
+          "_row_id" : "1080439831"
         }, {
           "expression" : {
             "expression" : "raw_orders.user_id"
           },
           "alias" : "USER_ID",
-          "_row_id" : "1315431212"
+          "_row_id" : "748003847"
         }, {
           "expression" : {
             "expression" : "raw_orders.order_date"
           },
           "alias" : "ORDER_DATE",
-          "_row_id" : "1582125920"
+          "_row_id" : "448246949"
         }, {
           "expression" : {
             "expression" : "raw_orders.status"
           },
           "alias" : "STATUS",
-          "_row_id" : "1514090630"
+          "_row_id" : "184912633"
         }, {
           "expression" : {
             "expression" : "raw_customers.id"
           },
           "alias" : "CUSTOMER_ID",
-          "_row_id" : "2998786"
+          "_row_id" : "1465778199"
         }, {
           "expression" : {
             "expression" : "raw_customers.first_name"
           },
           "alias" : "FIRST_NAME",
-          "_row_id" : "492767242"
+          "_row_id" : "1146370570"
         }, {
           "expression" : {
             "expression" : "raw_customers.last_name"
           },
           "alias" : "LAST_NAME",
-          "_row_id" : "1745287401"
+          "_row_id" : "2014358411"
         } ],
         "activeTab" : "conditions",
         "columnsSelector" : [ ],
@@ -176,21 +133,276 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "lwGBoKzJ",
+          "id" : "hcnjXqKn",
           "slug" : "raw_orders"
         }, {
-          "id" : "HbUZxEBo",
+          "id" : "Q3PGTypa",
           "slug" : "raw_customers"
         } ],
         "outputs" : [ {
-          "id" : "zJdWB9ip",
+          "id" : "gsycxyXV",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       }
     },
-    "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR" : {
-      "id" : "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR",
+    "user_order_aggre##URQ1LHdi" : {
+      "id" : "user_order_aggre##URQ1LHdi",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "user_order_aggregate",
+        "x" : -300,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "USER_ID"
+          },
+          "_row_id" : "178628837"
+        }, {
+          "expression" : {
+            "expression" : "FIRST_NAME"
+          },
+          "_row_id" : "600114555"
+        }, {
+          "expression" : {
+            "expression" : "LAST_NAME"
+          },
+          "_row_id" : "572128718"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(ORDER_ID)"
+          },
+          "alias" : "TOTAL_ORDERS",
+          "_row_id" : "1830072588"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "USER_ID"
+          },
+          "_row_id" : "701535946"
+        }, {
+          "expression" : {
+            "expression" : "FIRST_NAME"
+          },
+          "_row_id" : "1659752897"
+        }, {
+          "expression" : {
+            "expression" : "LAST_NAME"
+          },
+          "_row_id" : "970590321"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WGAV3Qpa",
+          "slug" : "orders_customers_join"
+        } ],
+        "outputs" : [ {
+          "id" : "hNaIzg8F",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "max_score_games##b7ecW2ke" : {
+      "id" : "max_score_games##b7ecW2ke",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "max_score_games",
+        "x" : -100,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "home_team_score = MAX_home_team_score_"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NKiLKfOO",
+          "slug" : "season_scores_with_max"
+        } ],
+        "outputs" : [ {
+          "id" : "xFxH4qpF",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "nba_games_season##CGp0HeWZ" : {
+      "id" : "nba_games_season##CGp0HeWZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "nba_games_season_scores",
+        "x" : -500,
+        "y" : 40,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "_row_id" : "2016353010"
+        }, {
+          "expression" : {
+            "expression" : "home_team_score"
+          },
+          "_row_id" : "977652641"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "sooNIhjs",
+          "slug" : "nba_games"
+        } ],
+        "outputs" : [ {
+          "id" : "MV8uThKC",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "raw_customers##NaJ3kAmt" : {
+      "id" : "raw_customers##NaJ3kAmt",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "raw_customers",
+        "x" : -700,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_customers",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "DbvEHTHt",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 0
+    },
+    "max_home_team_sc##UKffpyyW" : {
+      "id" : "max_home_team_sc##UKffpyyW",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "max_home_team_score",
+        "x" : -500,
+        "y" : 240,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "MAX(home_team_score)"
+          },
+          "alias" : "MAX_home_team_score_",
+          "_row_id" : "2043908904"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mJDucQYi",
+          "slug" : "nba_games"
+        } ],
+        "outputs" : [ {
+          "id" : "DOLVpfRa",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "season_scores##W8QQOilA" : {
+      "id" : "season_scores##W8QQOilA",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_scores",
+        "x" : 100,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "_row_id" : "1163445578"
+        }, {
+          "expression" : {
+            "expression" : "home_team_score"
+          },
+          "_row_id" : "336743719"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wJ3mPHaz",
+          "slug" : "max_score_games"
+        } ],
+        "outputs" : [ {
+          "id" : "BM0iJ9oT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "season_years##WNatlOS1" : {
+      "id" : "season_years##WNatlOS1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_years",
+        "x" : 300,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "SEASON_YEAR",
+          "_row_id" : "698848662"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "V9pDCbpl",
+          "slug" : "season_scores"
+        } ],
+        "outputs" : [ {
+          "id" : "MOo5sXet",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "nba_games##U2VK0P0s" : {
+      "id" : "nba_games##U2VK0P0s",
       "component" : "Dataset",
       "metadata" : {
         "label" : "nba_games",
@@ -209,19 +421,17 @@
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "mK5Q_fN5lF-Z8ryKpnBSw$$2GLJCWmTBDyAmm5jmuTlU",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "H4klyS_SI4HZPIR7AJ4xR$$UTUgmfncUpl_6jLl5F1Rd",
+          "id" : "DpQfJRaU",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      }
+      },
+      "index" : 4
     },
-    "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp" : {
-      "id" : "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp",
+    "aus_team##DWPnJG2G" : {
+      "id" : "aus_team##DWPnJG2G",
       "component" : "Dataset",
       "metadata" : {
         "label" : "aus_team",
@@ -240,19 +450,17 @@
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "iloP00uTirlZvo0CfOEQb$$jfOFk923U5NOpxKFQFBpS",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "KHtl3Y1wIxV18Az-KlyL6$$-CPuYJgSe4p_AIUCsnW4i",
+          "id" : "XfOzAyVk",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      }
+      },
+      "index" : 5
     },
-    "raw_orders##KjVf6dxa" : {
-      "id" : "raw_orders##KjVf6dxa",
+    "raw_orders##gCHIo102" : {
+      "id" : "raw_orders##gCHIo102",
       "component" : "Dataset",
       "metadata" : {
         "label" : "raw_orders",
@@ -273,7 +481,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "ytG3TnZO",
+          "id" : "dVSJJtrg",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -282,23 +490,65 @@
     }
   },
   "connections" : [ {
-    "id" : "HY1Zun5M",
-    "source" : "raw_orders##KjVf6dxa",
-    "sourcePort" : "ytG3TnZO",
-    "target" : "orders_customers##CWUu2WJP",
-    "targetPort" : "lwGBoKzJ"
+    "id" : "ONeE8CTd",
+    "source" : "raw_orders##gCHIo102",
+    "sourcePort" : "dVSJJtrg",
+    "target" : "orders_customers##SbUfUoWG",
+    "targetPort" : "hcnjXqKn"
   }, {
-    "id" : "QCDoEpWw",
-    "source" : "raw_customers##ItzdaNi5",
-    "sourcePort" : "dYgYj93s",
-    "target" : "orders_customers##CWUu2WJP",
-    "targetPort" : "HbUZxEBo"
+    "id" : "oxV5BuBZ",
+    "source" : "raw_customers##NaJ3kAmt",
+    "sourcePort" : "DbvEHTHt",
+    "target" : "orders_customers##SbUfUoWG",
+    "targetPort" : "Q3PGTypa"
   }, {
-    "id" : "fc6R51JQ",
-    "source" : "orders_customers##CWUu2WJP",
-    "sourcePort" : "zJdWB9ip",
+    "id" : "Cg6Dgnx5",
+    "source" : "orders_customers##SbUfUoWG",
+    "sourcePort" : "gsycxyXV",
     "target" : "user_order_aggre##URQ1LHdi",
-    "targetPort" : "s0cLm1EZ"
+    "targetPort" : "WGAV3Qpa"
+  }, {
+    "id" : "UrO33Ni8",
+    "source" : "nba_games##U2VK0P0s",
+    "sourcePort" : "DpQfJRaU",
+    "target" : "nba_games_season##CGp0HeWZ",
+    "targetPort" : "sooNIhjs"
+  }, {
+    "id" : "y1z7XE4z",
+    "source" : "nba_games##U2VK0P0s",
+    "sourcePort" : "DpQfJRaU",
+    "target" : "max_home_team_sc##UKffpyyW",
+    "targetPort" : "mJDucQYi"
+  }, {
+    "id" : "HCAs4NvL",
+    "source" : "nba_games_season##CGp0HeWZ",
+    "sourcePort" : "MV8uThKC",
+    "target" : "season_scores_wi##PEVyscNq",
+    "targetPort" : "RV4dTqWe"
+  }, {
+    "id" : "yJYk9BpM",
+    "source" : "max_home_team_sc##UKffpyyW",
+    "sourcePort" : "DOLVpfRa",
+    "target" : "season_scores_wi##PEVyscNq",
+    "targetPort" : "QuQJkWCq"
+  }, {
+    "id" : "Ap6vPz08",
+    "source" : "season_scores_wi##PEVyscNq",
+    "sourcePort" : "Q9Q8JW9g",
+    "target" : "max_score_games##b7ecW2ke",
+    "targetPort" : "NKiLKfOO"
+  }, {
+    "id" : "q11RVHAf",
+    "source" : "max_score_games##b7ecW2ke",
+    "sourcePort" : "xFxH4qpF",
+    "target" : "season_scores##W8QQOilA",
+    "targetPort" : "wJ3mPHaz"
+  }, {
+    "id" : "B0xM082T",
+    "source" : "season_scores##W8QQOilA",
+    "sourcePort" : "BM0iJ9oT",
+    "target" : "season_years##WNatlOS1",
+    "targetPort" : "V9pDCbpl"
   } ],
   "component" : "Pipeline"
 }

@@ -14,8 +14,38 @@
     "publishDiagnosticMetrics" : false
   },
   "processes" : {
-    "raw_customers##ItzdaNi5" : {
-      "id" : "raw_customers##ItzdaNi5",
+    "user_order_aggre##URQ1LHdi" : {
+      "id" : "user_order_aggre##URQ1LHdi",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline1__user_order_aggregate",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline1__user_order_aggregate"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "user_order_aggregate_hNaIzg8F", "user_order_aggre##URQ1LHdi", "orders_customers##SbUfUoWG", "raw_orders##gCHIo102", "raw_customers##NaJ3kAmt" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline1__user_order_aggregate_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "pipeline1__user_order_aggregate_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline1__user_order_aggregate_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "raw_customers##NaJ3kAmt" : {
+      "id" : "raw_customers##NaJ3kAmt",
       "component" : "Dataset",
       "metadata" : {
         "label" : "raw_customers",
@@ -36,76 +66,45 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "dYgYj93s",
+          "id" : "DbvEHTHt",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       },
       "index" : 0
     },
-    "user_order_aggre##URQ1LHdi" : {
-      "id" : "user_order_aggre##URQ1LHdi",
+    "season_years##WNatlOS1" : {
+      "id" : "season_years##WNatlOS1",
       "component" : "Model",
       "metadata" : {
-        "label" : "pipeline1__user_order_aggregate",
+        "label" : "pipeline1__season_years",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "pipeline1__user_order_aggregate"
+        "modelName" : "pipeline1__season_years"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "user_order_aggregate_IJ009Gxh", "user_order_aggre##URQ1LHdi", "orders_customers##CWUu2WJP", "raw_orders##KjVf6dxa", "raw_customers##ItzdaNi5" ],
+        "visualProcessIds" : [ "season_years_MOo5sXet", "season_years##WNatlOS1", "season_scores##W8QQOilA", "max_score_games##b7ecW2ke", "season_scores_wi##PEVyscNq", "nba_games_season##CGp0HeWZ", "nba_games##U2VK0P0s", "max_home_team_sc##UKffpyyW", "nba_games##U2VK0P0s" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "pipeline1__user_order_aggregate_in_0",
+          "id" : "pipeline1__season_years_in_0",
           "slug" : "in_0"
         }, {
-          "id" : "pipeline1__user_order_aggregate_in_1",
+          "id" : "pipeline1__season_years_in_1",
           "slug" : "in_1"
         } ],
         "outputs" : [ {
-          "id" : "pipeline1__user_order_aggregate_out_0",
+          "id" : "pipeline1__season_years_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }
     },
-    "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR" : {
-      "id" : "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "nba_games",
-        "x" : -700,
-        "y" : 140,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "nba_games",
-          "sourceName" : "qa_team_qa_orchestration",
-          "sourceType" : "Table"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "mK5Q_fN5lF-Z8ryKpnBSw$$2GLJCWmTBDyAmm5jmuTlU",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "H4klyS_SI4HZPIR7AJ4xR$$UTUgmfncUpl_6jLl5F1Rd",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp" : {
-      "id" : "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp",
+    "aus_team##DWPnJG2G" : {
+      "id" : "aus_team##DWPnJG2G",
       "component" : "Dataset",
       "metadata" : {
         "label" : "aus_team",
@@ -124,19 +123,17 @@
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "iloP00uTirlZvo0CfOEQb$$jfOFk923U5NOpxKFQFBpS",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "KHtl3Y1wIxV18Az-KlyL6$$-CPuYJgSe4p_AIUCsnW4i",
+          "id" : "XfOzAyVk",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      }
+      },
+      "index" : 5
     },
-    "raw_orders##KjVf6dxa" : {
-      "id" : "raw_orders##KjVf6dxa",
+    "raw_orders##gCHIo102" : {
+      "id" : "raw_orders##gCHIo102",
       "component" : "Dataset",
       "metadata" : {
         "label" : "raw_orders",
@@ -157,7 +154,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "ytG3TnZO",
+          "id" : "dVSJJtrg",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -166,15 +163,15 @@
     }
   },
   "connections" : [ {
-    "id" : "HY1Zun5M",
-    "source" : "raw_orders##KjVf6dxa",
-    "sourcePort" : "ytG3TnZO",
+    "id" : "ONeE8CTd",
+    "source" : "raw_orders##gCHIo102",
+    "sourcePort" : "dVSJJtrg",
     "target" : "user_order_aggre##URQ1LHdi",
     "targetPort" : "pipeline1__user_order_aggregate_in_0"
   }, {
-    "id" : "QCDoEpWw",
-    "source" : "raw_customers##ItzdaNi5",
-    "sourcePort" : "dYgYj93s",
+    "id" : "oxV5BuBZ",
+    "source" : "raw_customers##NaJ3kAmt",
+    "sourcePort" : "DbvEHTHt",
     "target" : "user_order_aggre##URQ1LHdi",
     "targetPort" : "pipeline1__user_order_aggregate_in_1"
   } ],

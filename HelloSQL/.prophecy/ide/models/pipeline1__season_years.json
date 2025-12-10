@@ -1,0 +1,349 @@
+{
+  "id" : "pipeline1__season_years",
+  "metainfo" : {
+    "label" : "pipeline1__season_years",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"qa_team\"",
+        "schema" : "\"qa_orchestration\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "season_scores_wi##PEVyscNq" : {
+      "id" : "season_scores_wi##PEVyscNq",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "season_scores_with_max",
+        "x" : -300,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "max_home_team_score",
+          "expression" : {
+            "expression" : "TRUE"
+          },
+          "joinType" : "LEFT"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "nba_games_season_scores.season_year"
+          },
+          "_row_id" : "1660569065"
+        }, {
+          "expression" : {
+            "expression" : "nba_games_season_scores.home_team_score"
+          },
+          "_row_id" : "1632526400"
+        }, {
+          "expression" : {
+            "expression" : "max_home_team_score.MAX_home_team_score_"
+          },
+          "alias" : "MAX_home_team_score_",
+          "_row_id" : "168416964"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "nba_games_season_scores"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RV4dTqWe",
+          "slug" : "nba_games_season_scores"
+        }, {
+          "id" : "QuQJkWCq",
+          "slug" : "max_home_team_score"
+        } ],
+        "outputs" : [ {
+          "id" : "Q9Q8JW9g",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "season_years_MOo5sXet" : {
+      "id" : "season_years_MOo5sXet",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "season_years"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM season_years\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "max_score_games##b7ecW2ke" : {
+      "id" : "max_score_games##b7ecW2ke",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "max_score_games",
+        "x" : -100,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "home_team_score = MAX_home_team_score_"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NKiLKfOO",
+          "slug" : "season_scores_with_max"
+        } ],
+        "outputs" : [ {
+          "id" : "xFxH4qpF",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "nba_games_season##CGp0HeWZ" : {
+      "id" : "nba_games_season##CGp0HeWZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "nba_games_season_scores",
+        "x" : -500,
+        "y" : 40,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "_row_id" : "2016353010"
+        }, {
+          "expression" : {
+            "expression" : "home_team_score"
+          },
+          "_row_id" : "977652641"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "sooNIhjs",
+          "slug" : "nba_games"
+        } ],
+        "outputs" : [ {
+          "id" : "MV8uThKC",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "max_home_team_sc##UKffpyyW" : {
+      "id" : "max_home_team_sc##UKffpyyW",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "max_home_team_score",
+        "x" : -500,
+        "y" : 240,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "MAX(home_team_score)"
+          },
+          "alias" : "MAX_home_team_score_",
+          "_row_id" : "2043908904"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mJDucQYi",
+          "slug" : "nba_games"
+        } ],
+        "outputs" : [ {
+          "id" : "DOLVpfRa",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "season_scores##W8QQOilA" : {
+      "id" : "season_scores##W8QQOilA",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_scores",
+        "x" : 100,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "_row_id" : "1163445578"
+        }, {
+          "expression" : {
+            "expression" : "home_team_score"
+          },
+          "_row_id" : "336743719"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wJ3mPHaz",
+          "slug" : "max_score_games"
+        } ],
+        "outputs" : [ {
+          "id" : "BM0iJ9oT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "season_years##WNatlOS1" : {
+      "id" : "season_years##WNatlOS1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "season_years",
+        "x" : 300,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "season_year"
+          },
+          "alias" : "SEASON_YEAR",
+          "_row_id" : "698848662"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "V9pDCbpl",
+          "slug" : "season_scores"
+        } ],
+        "outputs" : [ {
+          "id" : "MOo5sXet",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "nba_games##U2VK0P0s" : {
+      "id" : "nba_games##U2VK0P0s",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "nba_games",
+        "x" : -700,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "nba_games",
+          "sourceName" : "qa_team_qa_orchestration",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "DpQfJRaU",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_season_years##WNatlOS1_MOo5sXet_season_years_MOo5sXet",
+    "source" : "season_years##WNatlOS1",
+    "sourcePort" : "MOo5sXet",
+    "target" : "season_years_MOo5sXet",
+    "targetPort" : "input_port_1"
+  }, {
+    "id" : "B0xM082T",
+    "source" : "season_scores##W8QQOilA",
+    "sourcePort" : "BM0iJ9oT",
+    "target" : "season_years##WNatlOS1",
+    "targetPort" : "V9pDCbpl"
+  }, {
+    "id" : "q11RVHAf",
+    "source" : "max_score_games##b7ecW2ke",
+    "sourcePort" : "xFxH4qpF",
+    "target" : "season_scores##W8QQOilA",
+    "targetPort" : "wJ3mPHaz"
+  }, {
+    "id" : "Ap6vPz08",
+    "source" : "season_scores_wi##PEVyscNq",
+    "sourcePort" : "Q9Q8JW9g",
+    "target" : "max_score_games##b7ecW2ke",
+    "targetPort" : "NKiLKfOO"
+  }, {
+    "id" : "HCAs4NvL",
+    "source" : "nba_games_season##CGp0HeWZ",
+    "sourcePort" : "MV8uThKC",
+    "target" : "season_scores_wi##PEVyscNq",
+    "targetPort" : "RV4dTqWe"
+  }, {
+    "id" : "yJYk9BpM",
+    "source" : "max_home_team_sc##UKffpyyW",
+    "sourcePort" : "DOLVpfRa",
+    "target" : "season_scores_wi##PEVyscNq",
+    "targetPort" : "QuQJkWCq"
+  }, {
+    "id" : "UrO33Ni8",
+    "source" : "nba_games##U2VK0P0s",
+    "sourcePort" : "DpQfJRaU",
+    "target" : "nba_games_season##CGp0HeWZ",
+    "targetPort" : "sooNIhjs"
+  }, {
+    "id" : "y1z7XE4z",
+    "source" : "nba_games##U2VK0P0s",
+    "sourcePort" : "DpQfJRaU",
+    "target" : "max_home_team_sc##UKffpyyW",
+    "targetPort" : "mJDucQYi"
+  } ],
+  "component" : "Model"
+}
