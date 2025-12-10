@@ -43,34 +43,72 @@
       },
       "index" : 0
     },
-    "raw_orders##KjVf6dxa" : {
-      "id" : "raw_orders##KjVf6dxa",
-      "component" : "Dataset",
+    "user_order_aggre##URQ1LHdi" : {
+      "id" : "user_order_aggre##URQ1LHdi",
+      "component" : "Aggregate",
       "metadata" : {
-        "label" : "raw_orders",
-        "x" : -700,
-        "y" : -280,
+        "label" : "user_order_aggregate",
+        "x" : -300,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "USER_ID"
+          },
+          "_row_id" : "727399995"
+        }, {
+          "expression" : {
+            "expression" : "FIRST_NAME"
+          },
+          "_row_id" : "1946618590"
+        }, {
+          "expression" : {
+            "expression" : "LAST_NAME"
+          },
+          "_row_id" : "545246220"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(ORDER_ID)"
+          },
+          "alias" : "TOTAL_ORDERS",
+          "_row_id" : "274419178"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
         },
-        "table" : {
-          "name" : "raw_orders",
-          "sourceType" : "Seed",
-          "alias" : ""
-        }
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "USER_ID"
+          },
+          "_row_id" : "462236788"
+        }, {
+          "expression" : {
+            "expression" : "FIRST_NAME"
+          },
+          "_row_id" : "153652952"
+        }, {
+          "expression" : {
+            "expression" : "LAST_NAME"
+          },
+          "_row_id" : "1476565987"
+        } ]
       },
       "ports" : {
-        "inputs" : [ ],
+        "inputs" : [ {
+          "id" : "s0cLm1EZ",
+          "slug" : "orders_customers_join"
+        } ],
         "outputs" : [ {
-          "id" : "ytG3TnZO",
+          "id" : "IJ009Gxh",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      },
-      "index" : 1
+      }
     },
     "orders_customers##CWUu2WJP" : {
       "id" : "orders_customers##CWUu2WJP",
@@ -151,72 +189,96 @@
         "isCustomOutputSchema" : false
       }
     },
-    "user_order_aggre##URQ1LHdi" : {
-      "id" : "user_order_aggre##URQ1LHdi",
-      "component" : "Aggregate",
+    "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR" : {
+      "id" : "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR",
+      "component" : "Dataset",
       "metadata" : {
-        "label" : "user_order_aggregate",
-        "x" : -300,
-        "y" : -200,
+        "label" : "nba_games",
+        "x" : -700,
+        "y" : 140,
         "phase" : 0
       },
       "properties" : {
-        "aggregate" : [ {
-          "expression" : {
-            "expression" : "USER_ID"
-          },
-          "_row_id" : "727399995"
-        }, {
-          "expression" : {
-            "expression" : "FIRST_NAME"
-          },
-          "_row_id" : "1946618590"
-        }, {
-          "expression" : {
-            "expression" : "LAST_NAME"
-          },
-          "_row_id" : "545246220"
-        }, {
-          "expression" : {
-            "expression" : "COUNT(ORDER_ID)"
-          },
-          "alias" : "TOTAL_ORDERS",
-          "_row_id" : "274419178"
-        } ],
-        "allowSelection" : true,
-        "condition" : {
-          "expression" : ""
+        "writeOptions" : {
+          "writeMode" : "overwrite"
         },
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
-        "groupBy" : [ {
-          "expression" : {
-            "expression" : "USER_ID"
-          },
-          "_row_id" : "462236788"
-        }, {
-          "expression" : {
-            "expression" : "FIRST_NAME"
-          },
-          "_row_id" : "153652952"
-        }, {
-          "expression" : {
-            "expression" : "LAST_NAME"
-          },
-          "_row_id" : "1476565987"
-        } ]
+        "table" : {
+          "name" : "nba_games",
+          "sourceName" : "qa_team_qa_orchestration",
+          "sourceType" : "Table"
+        }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "s0cLm1EZ",
-          "slug" : "orders_customers_join"
+          "id" : "mK5Q_fN5lF-Z8ryKpnBSw$$2GLJCWmTBDyAmm5jmuTlU",
+          "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "IJ009Gxh",
+          "id" : "H4klyS_SI4HZPIR7AJ4xR$$UTUgmfncUpl_6jLl5F1Rd",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp" : {
+      "id" : "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "aus_team",
+        "x" : -680,
+        "y" : 340,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "aus_team",
+          "sourceName" : "qa_team_prakhar",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iloP00uTirlZvo0CfOEQb$$jfOFk923U5NOpxKFQFBpS",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "KHtl3Y1wIxV18Az-KlyL6$$-CPuYJgSe4p_AIUCsnW4i",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "raw_orders##KjVf6dxa" : {
+      "id" : "raw_orders##KjVf6dxa",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "raw_orders",
+        "x" : -700,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_orders",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ytG3TnZO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 1
     }
   },
   "connections" : [ {

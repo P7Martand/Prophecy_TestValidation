@@ -73,6 +73,68 @@
         "isCustomOutputSchema" : false
       }
     },
+    "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR" : {
+      "id" : "xBkpYATemMKy_eoelN5mI$$NBcPSha4z8RmEvmTvN-JR",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "nba_games",
+        "x" : -700,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "nba_games",
+          "sourceName" : "qa_team_qa_orchestration",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mK5Q_fN5lF-Z8ryKpnBSw$$2GLJCWmTBDyAmm5jmuTlU",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "H4klyS_SI4HZPIR7AJ4xR$$UTUgmfncUpl_6jLl5F1Rd",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp" : {
+      "id" : "AqJNCxnUi-BZ7JDu9JaH6$$mgVuZLo5Uw1gL39FRFtOp",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "aus_team",
+        "x" : -680,
+        "y" : 340,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "aus_team",
+          "sourceName" : "qa_team_prakhar",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iloP00uTirlZvo0CfOEQb$$jfOFk923U5NOpxKFQFBpS",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "KHtl3Y1wIxV18Az-KlyL6$$-CPuYJgSe4p_AIUCsnW4i",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "raw_orders##KjVf6dxa" : {
       "id" : "raw_orders##KjVf6dxa",
       "component" : "Dataset",

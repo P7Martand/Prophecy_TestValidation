@@ -10,6 +10,18 @@ with DAG():
         component = "Model", 
         modelName = "pipeline1__user_order_aggregate"
     )
+    nba_games = Task(
+        task_id = "nba_games", 
+        component = "Dataset", 
+        writeOptions = {"writeMode" : "overwrite"}, 
+        table = {"name" : "nba_games", "sourceName" : "qa_team_qa_orchestration", "sourceType" : "Table"}
+    )
+    aus_team = Task(
+        task_id = "aus_team", 
+        component = "Dataset", 
+        writeOptions = {"writeMode" : "overwrite"}, 
+        table = {"name" : "aus_team", "sourceName" : "qa_team_prakhar", "sourceType" : "Table"}
+    )
     raw_orders = Task(
         task_id = "raw_orders", 
         component = "Dataset", 

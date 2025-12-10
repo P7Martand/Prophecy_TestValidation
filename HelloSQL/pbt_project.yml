@@ -290,7 +290,92 @@ sqlSeeds:
     files:
     - seeds/raw_payments.csv
     createdAt: '2024-08-05 08:36:43'
-sqlSources: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/qa_team_prakhar:
+    name: qa_team_prakhar
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-12-10 14:36:06'
+    tables:
+    - name: aus_team
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: id
+          dataType:
+            type: Bigint
+        - name: player_name
+          dataType:
+            type: String
+        - name: total_matches
+          dataType:
+            type: Bigint
+        - name: total_scores
+          dataType:
+            type: Bigint
+        - name: category
+          dataType:
+            type: String
+        - name: total_wickets
+          dataType:
+            type: Bigint
+        - name: best_wicket_performance
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-12-10 14:36:06'
+      tableType: table
+  .prophecy/metadata/sqlsources/qa_team_qa_orchestration:
+    name: qa_team_qa_orchestration
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-12-10 14:36:37'
+    tables:
+    - name: nba_games
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: game_id
+          dataType:
+            type: String
+        - name: season_year
+          dataType:
+            type: Bigint
+        - name: game_date
+          dataType:
+            type: Date
+        - name: home_team_id
+          dataType:
+            type: String
+        - name: away_team_id
+          dataType:
+            type: String
+        - name: home_team_score
+          dataType:
+            type: Bigint
+        - name: away_team_score
+          dataType:
+            type: Bigint
+        - name: overtime_periods
+          dataType:
+            type: Bigint
+        - name: attendance
+          dataType:
+            type: Bigint
+        - name: arena_name
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-12-10 14:36:37'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
