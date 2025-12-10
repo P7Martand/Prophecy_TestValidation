@@ -1,7 +1,4 @@
-Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@gmail.com"], enabled = False)
-SensorSchedule = SensorSchedule(enabled = False)
-
-with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
+with DAG():
     raw_orders = Task(
         task_id = "raw_orders", 
         component = "Dataset", 
@@ -14,3 +11,10 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "raw_customers", "sourceType" : "Seed", "alias" : ""}
     )
+    pipeline1__orders_customers_join = Task(
+        task_id = "pipeline1__orders_customers_join", 
+        component = "Model", 
+        modelName = "pipeline1__orders_customers_join"
+    )
+    raw_orders.out >> pipeline1__orders_customers_join.in_0
+    raw_customers.out >> pipeline1__orders_customers_join.in_1

@@ -10,20 +10,6 @@
         "fields" : [ ]
       }
     },
-    "schedule" : {
-      "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
-      "emailOnSuccess" : false,
-      "emailOnFailure" : false,
-      "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "sensorSchedule" : {
-      "enabled" : false,
-      "isDefaultView" : false,
-      "triggers" : { }
-    },
     "isTranspiledPipeline" : false,
     "publishDiagnosticMetrics" : false
   },
@@ -50,14 +36,14 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "p7DzabJo76lN9NP1Ca8W7",
+          "id" : "NeQWtzkL",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       }
     },
-    "t_n68oMafUXicV5a2rWMp" : {
-      "id" : "t_n68oMafUXicV5a2rWMp",
+    "raw_customers##a8U8xyWh" : {
+      "id" : "raw_customers##a8U8xyWh",
       "component" : "Dataset",
       "metadata" : {
         "label" : "raw_customers",
@@ -78,13 +64,56 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "TvSxcS0QyVRtNIvYuwmtv",
+          "id" : "S9NZE1eK",
           "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 1
+    },
+    "orders_customers##CWUu2WJP" : {
+      "id" : "orders_customers##CWUu2WJP",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline1__orders_customers_join",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline1__orders_customers_join"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "orders_customers_join_qbccllJ5", "orders_customers##CWUu2WJP", "7gEwb8KjK8DNH8VQbm0j-", "raw_customers##a8U8xyWh" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pipeline1__orders_customers_join_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "pipeline1__orders_customers_join_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "pipeline1__orders_customers_join_out_0",
+          "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "E8EO7enF",
+    "source" : "7gEwb8KjK8DNH8VQbm0j-",
+    "sourcePort" : "NeQWtzkL",
+    "target" : "orders_customers##CWUu2WJP",
+    "targetPort" : "pipeline1__orders_customers_join_in_0"
+  }, {
+    "id" : "JS6HSRp4",
+    "source" : "raw_customers##a8U8xyWh",
+    "sourcePort" : "S9NZE1eK",
+    "target" : "orders_customers##CWUu2WJP",
+    "targetPort" : "pipeline1__orders_customers_join_in_1"
+  } ],
   "component" : "Pipeline"
 }

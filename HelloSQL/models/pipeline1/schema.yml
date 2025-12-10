@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "pipeline1__orders_customers_join"
+  tags:
+  - "prophecy_temp"
