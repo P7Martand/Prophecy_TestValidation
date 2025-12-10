@@ -222,6 +222,7 @@ sqlMacros:
     files:
     - macros/prophecy_tmp_source.sql
     - .prophecy/ide/macros/prophecy_tmp_source.json
+    - macros/macros.yml
     createdAt: '2025-12-10 14:16:04'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/raw_customers:
