@@ -1,0 +1,12 @@
+---
+version: 2
+macros:
+- name: "prophecy_tmp_source"
+  arguments:
+  - name: "pipelineName"
+    type: "value"
+  - name: "label"
+    type: "value"
+  - name: "suffix"
+    type: "value"
+  macroType: "expression"
