@@ -243,7 +243,7 @@ sqlSeeds:
       fields:
       - name: id
         dataType:
-          type: Integer
+          type: Bigint
       - name: first_name
         dataType:
           type: String
@@ -263,10 +263,10 @@ sqlSeeds:
       fields:
       - name: id
         dataType:
-          type: Integer
+          type: Bigint
       - name: user_id
         dataType:
-          type: Integer
+          type: Bigint
       - name: order_date
         dataType:
           type: Date
@@ -286,16 +286,16 @@ sqlSeeds:
       fields:
       - name: id
         dataType:
-          type: Integer
+          type: Bigint
       - name: order_id
         dataType:
-          type: Integer
+          type: Bigint
       - name: payment_method
         dataType:
           type: String
       - name: amount
         dataType:
-          type: Integer
+          type: Bigint
     description: null
     author: kiranadmin@prophecy.io
     files:

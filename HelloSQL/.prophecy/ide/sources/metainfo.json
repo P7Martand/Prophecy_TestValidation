@@ -274,7 +274,16 @@
   "dependenciesContainer" : {
     "dependencies" : { },
     "prophecyProjectDependencies" : {
-      "https://github.com/prophecy-io/prophecy-basics" : "6632"
+      "https://github.com/prophecy-io/prophecy-basics" : "6632",
+      "https://github.com/prophecy-io/prophecy-spatial" : "9293"
+    },
+    "dependenciesMetadata" : {
+      "https://github.com/prophecy-io/prophecy-basics" : {
+        "autoUpgrade" : true
+      },
+      "https://github.com/prophecy-io/prophecy-spatial" : {
+        "autoUpgrade" : true
+      }
     }
   },
   "entitiesToSync" : [ {

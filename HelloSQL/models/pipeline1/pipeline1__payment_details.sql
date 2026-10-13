@@ -8,6 +8,7 @@
 
 WITH raw_payments AS (
 
+  {#Overwrites the raw payments dataset with new data.#}
   SELECT * 
   
   FROM {{ ref('raw_payments')}}

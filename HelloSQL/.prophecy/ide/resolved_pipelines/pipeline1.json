@@ -1,0 +1,139 @@
+{
+  "id" : "pipeline1",
+  "metainfo" : {
+    "label" : "pipeline1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedules" : [ {
+      "name" : "Schedule 1",
+      "scheduleType" : "cron",
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false,
+      "triggers" : { }
+    } ],
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false,
+    "processesVsModelFiles" : {
+      "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF" : "models/pipeline1/pipeline1__payment_details.sql",
+      "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g" : "models/pipeline1/pipeline1__payment_details.sql",
+      "Bji30gQkuneF7OwyQoGyA" : "models/pipeline1/pipeline1__payment_details.sql",
+      "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw" : "models/pipeline1/pipeline1__payment_details.sql"
+    }
+  },
+  "processes" : {
+    "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw" : {
+      "id" : "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "raw_payments",
+        "x" : -700,
+        "y" : -420,
+        "phase" : 0,
+        "comment" : "Overwrites the raw payments dataset with new data.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_payments",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "8XU50RBlyY3qUeX41eETs$$zI0UKSK9tSjo_wekzNZ2I",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Bji30gQkuneF7OwyQoGyA" : {
+      "id" : "Bji30gQkuneF7OwyQoGyA",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "raw_customers",
+        "x" : -540,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "raw_customers",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "10VuY4izqlZ1Mjp0Kd7fQ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g" : {
+      "id" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pipeline1__payment_details",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pipeline1__payment_details"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF", "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g", "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw", "Bji30gQkuneF7OwyQoGyA" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YgkupRFpnVrdMLTNLVCCY$$hymWE9Rk4LVx-peTSZ9o9",
+          "slug" : "in_0"
+        }, {
+          "id" : "HN_6k7YSuP8NTJm8EHtYc$$9xG6bMq1eLetF9_O8qGc_",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "uHQo28ZRoNG4cbcS1aN4z",
+    "source" : "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw",
+    "sourcePort" : "8XU50RBlyY3qUeX41eETs$$zI0UKSK9tSjo_wekzNZ2I",
+    "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
+    "targetPort" : "YgkupRFpnVrdMLTNLVCCY$$hymWE9Rk4LVx-peTSZ9o9"
+  }, {
+    "id" : "Kebu9DwxUNF6rNRZuwJYC$$VDT-_Lmh7cd6be0KjKeuC",
+    "source" : "Bji30gQkuneF7OwyQoGyA",
+    "sourcePort" : "10VuY4izqlZ1Mjp0Kd7fQ",
+    "target" : "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g",
+    "targetPort" : "HN_6k7YSuP8NTJm8EHtYc$$9xG6bMq1eLetF9_O8qGc_"
+  } ],
+  "component" : "Pipeline"
+}

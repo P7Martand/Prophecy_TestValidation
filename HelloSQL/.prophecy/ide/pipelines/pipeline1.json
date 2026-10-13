@@ -10,22 +10,26 @@
         "fields" : [ ]
       }
     },
-    "schedule" : {
+    "schedules" : [ {
+      "name" : "Schedule 1",
+      "scheduleType" : "cron",
       "cron" : "* 0 2 * * * *",
       "timeZone" : "GMT",
       "emailOnSuccess" : false,
       "emailOnFailure" : false,
       "emailOnStart" : false,
       "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "sensorSchedule" : {
       "enabled" : false,
-      "isDefaultView" : false,
       "triggers" : { }
-    },
+    } ],
     "isTranspiledPipeline" : false,
-    "publishDiagnosticMetrics" : false
+    "publishDiagnosticMetrics" : false,
+    "processesVsModelFiles" : {
+      "payment_details_RK7AzZgMXYrHbSOvkcDBC$$p86CM4Gbhfh_qToYI7MdF" : "models/pipeline1/pipeline1__payment_details.sql",
+      "n7DBoyTl4l_aX4Phx1r1D$$vqryTMwo4tEV78zCXo58g" : "models/pipeline1/pipeline1__payment_details.sql",
+      "Bji30gQkuneF7OwyQoGyA" : "models/pipeline1/pipeline1__payment_details.sql",
+      "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw" : "models/pipeline1/pipeline1__payment_details.sql"
+    }
   },
   "processes" : {
     "6qPCBQmpiM-POQKS3Rz4a$$NqEoSCPN6cIZwpjs7XOWw" : {
